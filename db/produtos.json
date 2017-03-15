@@ -1,0 +1,278 @@
+PIC:[
+	{
+		"tipo":"PIC",
+		"nome": "Microcontrolador PIC 12F629",
+		"valor": "7.90",
+		"estoque": "39",
+		"descrição": "Microcontrolador PIC12F629 Microchip de 8 bits, de programação simples e alta performance, indicado para utilização em projetos industriais, automotivos, prototipação e automação residencial, entre outros.",
+		"código": "01",
+		"avaliação": ""
+	},
+	{
+		"tipo":"PIC",
+		"nome": "Microcontrolador PIC 16F628A",
+		"valor": "14.90",
+		"estoque": "12",
+		"descrição": "Este é o compacto e completo Microcontrolador PIC16F628A da Microchip.",
+		"código": "02",
+		"avaliação": ""
+	},
+	{
+		"tipo":"PIC",
+		"nome": "Microcontrolador PIC 16F630",
+		"valor": "12.90",
+		"estoque": "14",
+		"descrição": "Microcontrolador PIC16F630 Microchip 8 bits, de fácil programação e alta performance, indicado tanto para utilização em ambientes industriais e automotivos como também para pequenos projetos e automação residencial.",
+		"código": "03",
+		"avaliação": ""
+	},
+	{
+		"tipo":"PIC",
+		"nome": "Microcontrolador PIC 16F676",
+		"valor": "8.90",
+		"estoque": "1",
+		"descrição": "Microcontrolador PIC16F676 Microchip de 8 bits, de programação simples e alta performance, indicado para utilização em projetos industriais, automotivos, prototipação e automação residencial, entre outros.",
+		"código": "04",
+		"avaliação": ""
+	},
+	{
+		"tipo":"PIC",
+		"nome": "Microcontrolador PIC 16F676",
+		"valor": "8.90",
+		"estoque": "1",
+		"descrição": "Microcontrolador PIC16F676 Microchip de 8 bits, de programação simples e alta performance, indicado para utilização em projetos industriais, automotivos, prototipação e automação residencial, entre outros.",
+		"código": "04",
+		"avaliação": ""
+	},
+	{
+		"tipo":"PIC",
+		"nome": "Microcontrolador PIC 16F877A",
+		"valor": "26.90",
+		"estoque": "17",
+		"descrição": "Este é o poderoso e fácil de se programar Microcontrolador PIC 16F877A da Microchip.",
+		"código": "05",
+		"avaliação": ""
+	},
+	{
+		"tipo":"PIC",
+		"nome": "Microcontrolador PIC 18F4550",
+		"valor": "44.90",
+		"estoque": "0",
+		"descrição": "Este é o poderoso e conectável Microcontrolador PIC 18F4550 da Microchip. Acompanha diversas portas de comunicação, inclusive USB 2.0 com (12Mbit/s).",
+		"código": "06",
+		"avaliação": ""
+	},
+	{
+		"tipo":"PIC",
+		"nome": "Microcontrolador PIC 16F873A",
+		"valor": "21.90",
+		"estoque": "25",
+		"descrição": "Microcontrolador PIC16F873A Microchip de 8 bits, de programação simples e alta performance, indicado para utilização em projetos industriais, automotivos, prototipação e automação residencial, entre outros.",
+		"código": "07",
+		"avaliação": ""
+	},
+	{
+		"tipo":"PIC",
+		"nome": "Microcontrolador PIC 16F876A",
+		"valor": "16.90",
+		"estoque": "47",
+		"descrição": "Microcontrolador PIC16F876A Microchip 8 bits, de fácil programação e alta performance, indicado tanto para utilização em ambientes industriais e automotivos como também para pequenos projetos e automação residencial.",
+		"código": "08",
+		"avaliação": ""
+	},{
+		"tipo":"PIC",
+		"nome": "Microcontrolador PIC 16F84A",
+		"valor": "22.90",
+		"estoque": "10",
+		"descrição": "Poderoso Microcontrolador PIC16F84A Microchip 8 bits, de fácil programação, indicado para prototipação ou projetos finais.
+
+		Permite a programação via ICSP e é facilmente adaptável à circuitos que necessitem de baixo consumo de energia, como sistemas remotos e projetos na área de segurança.",
+		"código": "08",
+		"avaliação": ""
+	}
+],
+
+SENSORES:[
+	{
+		"tipo":"SENSOR",
+		"nome": "Sensor de Distância Ultrassônico HC-SR04",
+		"valor": "9.90",
+		"estoque": "7",
+		"descrição": "O Sensor ultrassônico HC-SR04 é capaz de medir distâncias de 2cm a 4m com ótima precisão e baixo preço. Este módulo possui um circuito pronto com emissor e receptor acoplados e 4 pinos (VCC, Trigger, ECHO, GND) para medição.
+
+		Você ainda pode acoplar este sensor neste suporte para sensor ultrassônico, facilitando a prototipagem do seu projeto.",
+		"código": "09",
+		"avaliação": ""
+	},
+	{
+		"tipo":"SENSOR",
+		"nome": "Acelerômetro e Giroscópio 3 Eixos 6 DOF MPU-6050",
+		"valor": "22.90",
+		"estoque": "78",
+		"descrição": "O sensor MPU-6050 contém em um único chip um acelerômetro e um giroscópio tipo MEMS. São 3 eixos para o acelerômetro e 3 eixos para o giroscópio, sendo ao todo 6 graus de liberdade (6DOF). 
+
+		Não bastasse isso esta placa GY-521 tem um sensor de temperatura embutido no CI MPU6050, permitindo medições entre -40 e +85 ºC.
+
+		Possui alta precisão devido ao conversor analógico digital de 16-bits para cada canal. Portanto o sensor captura os canais X, Y e Z ao mesmo tempo.",
+		"código": "10",
+		"avaliação": ""
+	},
+	{
+		"tipo":"SENSOR",
+		"nome": "Acelerômetro e Giroscópio 9 Eixos 10 DOF MPU-9250 com BMP180",
+		"valor": "89.90",
+		"estoque": "6",
+		"descrição": "Dois módulos em um só! Esse é o módulo MPU9250, que conta também com um sensor de pressão BMP180, reduzindo o custo do seu projeto e facilitando a conexão, pois o módulo usa a interface I2C para se comunicar com o microcontrolador.
+
+		O MPU9250 é um chip que tem um acelerômetro de 3 eixos, um giroscópio de 3 eixos e magnetômetro (sensor de campo magnético), também de 3 eixos. Aliado ao sensor de pressão BMP180, que se caracteriza pelo baixo consumo de energia, você tem um módulo com 10DOF (Degrees of Freedom), tudo isso em uma minúscula placa.",
+		"código": "11",
+		"avaliação": ""
+	},
+	{
+		"tipo":"SENSOR",
+		"nome": "Sensor de Umidade e Temperatura DHT11",
+		"valor": "10.90",
+		"estoque": "35",
+		"descrição": "O DHT11 é um sensor de temperatura e umidade que permite fazer leituras de temperaturas entre 0 a 50 Celsius e umidade entre 20 a 90%, muito usado para projetos com Arduino.
+
+		O elemento sensor de temperatura é um termistor do tipo NTC e o sensor de Umidade é do tipo HR202, o circuito interno faz a leitura dos sensores e se comunica a um microcontrolador através de um sinal serial de uma via. Confira a pinagem nas imagens.",
+		"código": "12",
+		"avaliação": ""
+	},
+	{
+		"tipo":"SENSOR",
+		"nome": "Sensor de Umidade e Temperatura AM2302 DHT22",
+		"valor": "36.90",
+		"estoque": "21",
+		"descrição": "O DHT22 é um sensor de temperatura e umidade que permite fazer leituras de temperaturas entre -40 a +80 graus Celsius e umidade entre 0 a 100%, sendo muito fácil de usar com Arduino, Raspberry e outros microcontroladores pois possui apenas 1 pino com saída digital.
+
+		Este sensor AM2302 é compatível com os modelos DHT22/AM2303 e é formado por um sensor de umidade capacitivo e um termistor para medir o ar ao redor, enviando no pino de dados um sinal digital (não é necessário pinos analógicos aqui).",
+		"código": "13",
+		"avaliação": ""
+	},
+	{
+		"tipo":"SENSOR",
+		"nome": "Sensor de Gás MQ-2 Inflamável e Fumaça",
+		"valor": "16.90",
+		"estoque": "46",
+		"descrição": "Este sensor de gás inflamável e fumaça MQ-2 é capaz de detectar concentrações de gases combustíveis e fumaça no ar. Um módulo confiável e simples de usar em seus projetos de automação residencial com Arduino por exemplo.
+
+		Quando a concentração de gases fica acima do nível ajustado pelo potenciômetro, a saída digital D0 fica em estado alto, se abaixo do nível, fica em estado baixo. Uma ótima opção para acionar um microcontrolador ou relés.
+
+		Para ter uma resolução melhor e medir a variação da concentração dos gases no ar é possível usar a saída analógica A0 e conectar a um conversor AD, como a presente no Arduino e Raspberry Pi por exemplo.",
+		"código": "14",
+		"avaliação": ""
+	},
+	{
+		"tipo":"SENSOR",
+		"nome": "Sensor de Corrente Não Invasivo 20A SCT-013",
+		"valor": "49.90",
+		"estoque": "43",
+		"descrição": "O sensor de corrente SCT-013-020 é uma ótima opção se você está buscando um equipamento para medir corrente até 20A e que não seja invasivo. Muito usado em projetos para monitoramento de corrente, proteção de motores AC, iluminação e dentre outros.",
+		"código": "15",
+		"avaliação": ""
+	},
+	{
+		"tipo":"SENSOR",
+		"nome": "Sensor de Corrente Não Invasivo 100A SCT-013",
+		"valor": "49.90",
+		"estoque": "12",
+		"descrição": "O sensor de corrente SCT-013-000 é uma ótima opção se você está buscando um equipamento para medir corrente até 100A e que não seja invasivo. Muito usado em projetos com Arduino de automação residencial como medidores de corrente elétrica, proteção de motores AC, iluminação e dentre outros.",
+		"código": "16",
+		"avaliação": ""
+	},
+	{
+		"tipo":"SENSOR",
+		"nome": "Sensor de Fluxo de Água 1/2 YF-S201",
+		"valor": "34.90",
+		"estoque": "20",
+		"descrição": "Medir fluxo de água para seus projetos eletrônicos agora não é mais um problema com este Sensor de Fluxo de Água YF-S201. Ele é instalado em linha com o cano para medir a quantidade de água que circula por ele, enviando pulsos PWM para seu Arduino ou Raspberry Pi por exemplo.
+
+		Seu funcionamento é bem simples, em sua estrutura há um válvula em formato de catavento com um imã acoplado que trabalha em conjunto com um sensor hall para enviar um sinal PWM. Através destes pulsos é possível mensurar a vazão de água, sendo que cada pulso mede aproximadamente 2,25mm. Confira esta biblioteca para conexão com um Arduino.",
+		"código": "17",
+		"avaliação": ""
+	},
+	{
+		"tipo":"SENSOR",
+		"nome": "Sensor de Frequência Cardíaca",
+		"valor": "34.90",
+		"estoque": "89",
+		"descrição": "Os dados de frequência cardíaca podem ser muito úteis quando você está montando uma rotina de exercícios, estudando sua atividade física diária ou mesmo para fins didáticos.
+
+		O sensor de pulso monitor cardíaco efetua a leitura das batidas do coração usando um sensor óptico amplificado, e envia esses dados para o microcontrolador como o Arduino através de um único pino de sinal.
+
+		Devido ao baixo consumo de energia (4mA), é indicado para projetos embarcados e wearables.",
+		"código": "18",
+		"avaliação": ""
+	},
+	{
+		"tipo":"SENSOR",
+		"nome": "Joystick Arduino 3 Eixos",
+		"valor": "12.90",
+		"estoque": "24",
+		"descrição": "Este Joystick tem seu princípio de funcionamento através do controle de 2 potenciômetros e um botão. Duas das entradas dos potenciômetros referem-se aos eixos X e Y, sendo que o botão quando pressionado refere-se ao eixo Z. Logo este Joystick contém o total de três interfaces de entradas que são utilizadas para conectar ao eixo X, Y e Z.
+
+		Este modelo com menos pinos torna-se uma ótima opção para projetos com Arduino pois evita muitas conexões, podendo ser usado como mouse, controle de robôs, games, joystick ps2 e projetos em geral. Confira alguns projetos na seção Blog abaixo!",
+		"código": "19",
+		"avaliação": ""
+	},
+	{
+		"tipo":"SENSOR",
+		"nome": "Kit de Sensores x16 unidades",
+		"valor": "159.90",
+		"estoque": "7",
+		"descrição": "Com este kit de sensores de 16 peças você tem diversos componentes para começar o seu projeto, ao mesmo tempo em que economiza adquirindo vários sensores no mesmo pacote.
+
+		O kit é composto por sensor de temperatura, sensor infravermelho, RTC, sensor de chuva, sensor ultrassônico, sensor de chama, módulo laser, sensor de umidade do solo, sensor de som, módulo sensor de luz LDR, sensor de obstáculo, sensor de choque, transceiver 315MHz, sensor de gás, sensor tilt e sensor ótico TCRT5000.
+
+		Os sensores e componentes podem tanto ser usados com Arduino como com Raspberry Pi, Cubieboard, Beaglebone e outras placas do mercado (observe a tensão de nível de sinal de cada um dos sensores). 
+
+		Para mais detalhes e exemplos de utilização dos componentes, verifique os links dos itens abaixo:",
+		"código": "20",
+		"avaliação": ""
+	},
+	{
+		"tipo":"SENSOR",
+		"nome": "Módulo Sensor IR 5 Canais para Robô Seguidor de Linha",
+		"valor": "44.90",
+		"estoque": "13",
+		"descrição": "Com o módulo sensor IR 5 canais você tem um excelente componente para a montagem do seu robô, com 6 sensores IR e 1 switch, para você montar um robô anti-colisão, seguidor de linha ou qualquer outra configuração necessária ao seu projeto.
+
+		São 5 sensores IR na parte de baixo do sensor, 1 na parte dianteira e 1 switch, que você pode usar para desligar o robô, por exemplo, quando ele tocar em algum obstáculo. O módulo tem ainda leds indicadores para cada um dos sensores, além do led Power (ligado).",
+		"código": "21",
+		"avaliação": ""
+	},
+	{
+		"tipo":"SENSOR",
+		"nome": "Sensor de Proximidade Indutivo NPN 6-36V",
+		"valor": "26.90",
+		"estoque": "90",
+		"descrição": "O Sensor de Proximidade Indutivo NPN é um sensor capaz de detectar objetos metálicos a até 4mm de distância e gerar um sinal na saída do sensor, que pode ser lido por um microcontrolador como Arduino.
+
+		O sensor indutivo por ser utilizado em máquinas, contadores, impressoras 3D, como chave de fim de curso, alarmes e outras aplicações.",
+		"código": "22",
+		"avaliação": ""
+	},
+	{
+		"tipo":"SENSOR",
+		"nome": "Sensor Termopar Tipo K Temperatura -50 a 650°C",
+		"valor": "9.90",
+		"estoque": "129",
+		"descrição": "Termopar Tipo K com faixa de medição de -50 à 650°C, para utilização em equipamentos de medição e multímetros.
+
+		Utilização em medida de temperatura de superfícies, ar e gás.",
+		"código": "23",
+		"avaliação": ""
+	},
+	{
+		"tipo":"SENSOR",
+		"nome": "Módulo Receptor Infravermelho IR KY-022",
+		"valor": "8.90",
+		"estoque": "33",
+		"descrição": "Módulo receptor infravermelho modelo KY-022 para utilização em projetos eletrônicos, sistemas de controle remoto por IR, alarmes e outras aplicações.
+
+		O módulo contém um receptor IR 1838 que funciona com tensões entre 2,7 e 5,5V comunicando-se com o microcontrolador por meio de um único pino de sinal.",
+		"código": "24",
+		"avaliação": ""
+	},
+],

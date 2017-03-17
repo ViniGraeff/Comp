@@ -15,12 +15,11 @@ a {
 /*-------------------------------*/
 
 // BACKGROUND COLOR
-@bg-color: #cec21e;
+@bg-color: #1aad2b;
 
 // TEXT COLOR
 @text-color: #fff;
 
-@sidebar-color: 0;
 @page-background: #333;
 
 // SIDEBAR LINK COLOR VARIABLES
@@ -28,15 +27,15 @@ a {
 @side-color-2: darken(@side-color-3, 1%);
 @side-color-3: darken(@side-color-4, 1%);
 @side-color-4: @bg-color;
-@side-color-5: lighten(@side-color-4, 1%);
-@side-color-6: lighten(@side-color-5, 1%);
-@side-color-7: lighten(@side-color-6, 1%);
-@side-color-8: lighten(@side-color-7, 1%);
-@side-color-9: lighten(@side-color-8, 1%);
+@side-color-5: darken(@side-color-4, 1%);
+@side-color-6: darken(@side-color-5, 1%);
+@side-color-7: darken(@side-color-6, 1%);
+@side-color-8: darken(@side-color-7, 1%);
+@side-color-9: darken(@side-color-8, 1%);
 
 // HAMBURGER COLOR
-@hamburger-color-closed: fadeout(@text-color, 30);
-@hamburger-color-open: @text-color;
+@hamburger-color-closed: fadeout(@bg-color, 30);
+@hamburger-color-open: @bg-color;
 
 // WIDTH VARIABLES
 @width1: 220px;

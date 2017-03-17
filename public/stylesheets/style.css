@@ -1,10 +1,10 @@
 /*body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	padding: 50px;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+	color: #00B7FF;
 }*/
 @import "http://designmodo.github.io/Flat-UI/dist/css/flat-ui.min.css";
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css";
@@ -291,4 +291,19 @@ html {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 1;
+}
+/*Yo*/
+.sidebar-brand a {
+  display: inline;
+  margin-top: 3px;
+  float: left;
+}
+.sidebar-brand img {
+  display: inline;
+  width: 60px;
+  height: 60px;
+  float: left;
+  border-radius: 50%;
+  margin-top: 5px;
+  margin-left: 15px;
 }

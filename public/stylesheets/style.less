@@ -15,21 +15,24 @@ a {
 /*-------------------------------*/
 
 // BACKGROUND COLOR
-@bg-color: #583e7e;
+@bg-color: #cec21e;
 
 // TEXT COLOR
 @text-color: #fff;
 
+@sidebar-color: 0;
+@page-background: #333;
+
 // SIDEBAR LINK COLOR VARIABLES
 @side-color-1: #1a1a1a;
-@side-color-2: darken(@side-color-3, 5%);
-@side-color-3: darken(@side-color-4, 5%);
+@side-color-2: darken(@side-color-3, 1%);
+@side-color-3: darken(@side-color-4, 1%);
 @side-color-4: @bg-color;
-@side-color-5: lighten(@side-color-4, 5%);
-@side-color-6: lighten(@side-color-5, 5%);
-@side-color-7: lighten(@side-color-6, 5%);
-@side-color-8: lighten(@side-color-7, 5%);
-@side-color-9: lighten(@side-color-8, 5%);
+@side-color-5: lighten(@side-color-4, 1%);
+@side-color-6: lighten(@side-color-5, 1%);
+@side-color-7: lighten(@side-color-6, 1%);
+@side-color-8: lighten(@side-color-7, 1%);
+@side-color-9: lighten(@side-color-8, 1%);
 
 // HAMBURGER COLOR
 @hamburger-color-closed: fadeout(@text-color, 30);
@@ -50,6 +53,7 @@ body {
 body,
 html {
   height: @full-height;
+  background-color: @page-background;
 }
 
 

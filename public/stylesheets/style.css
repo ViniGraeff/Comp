@@ -15,7 +15,6 @@ a {
 body {
   position: relative;
   overflow-x: hidden;
-  margin: 0 10%;
 }
 body,
 html {
@@ -37,6 +36,9 @@ html {
   background-color: #1aad2b;
   float: right;
   padding: 13px;
+}
+.nav-top a {
+  color: #504E4F;
 }
 /*-----------------------------*/
 .nav .open > a {

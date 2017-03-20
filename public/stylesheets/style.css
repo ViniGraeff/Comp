@@ -40,6 +40,9 @@ html {
 .nav-top a {
   color: #504E4F;
 }
+.nav-top a:hover {
+  color: #E7E7E8;
+}
 /*-----------------------------*/
 .nav .open > a {
   background-color: transparent;
@@ -88,7 +91,7 @@ html {
   display: none;
 }
 #page-content-wrapper {
-  padding-top: 70px;
+  padding-top: 0px;
   width: 100%;
 }
 /*-------------------------------*/
@@ -312,11 +315,14 @@ html {
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
-/*Yo*/
+/*-------------------------------*/
+/*          Logo-Sidebar         */
+/*-------------------------------*/
 .sidebar-brand a {
   display: inline;
   margin-top: 3px;
   float: left;
+  height: 40px;
 }
 .sidebar-brand img {
   display: inline;
@@ -326,4 +332,13 @@ html {
   border-radius: 50%;
   margin-top: 5px;
   margin-left: 15px;
+}
+/*-------------------------------*/
+/*            Content            */
+/*-------------------------------*/
+.conteudo {
+  width: 80%;
+  height: 500px;
+  margin: 0 auto;
+  background-color: #E7E7E8;
 }

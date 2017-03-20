@@ -20,6 +20,9 @@ a {
 // TOP-NAV COLLOR
 @nav-top: #504E4F;
 
+//COR CONTEÚDO
+@cor-conteudo: #E7E7E8;
+
 // TEXT COLOR
 @text-color: #fff;
 
@@ -78,10 +81,13 @@ html {
 	padding: 13px;
 }
 
-.nav-top a{
+.nav-top a {
 	color: @nav-top;
-}
 
+	&:hover{
+		color: @cor-conteudo;
+	}
+}
 
 
 /*-----------------------------*/
@@ -98,18 +104,6 @@ html {
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*-------------------------------*/
 /*           Wrappers            */
@@ -150,32 +144,9 @@ html {
 	}
 }
 #page-content-wrapper {
-	padding-top: 70px;
+	padding-top: 0px;
 	width: @full-width;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*-------------------------------*/
 /*     Sidebar nav styles        */
@@ -292,7 +263,6 @@ html {
 	height: 65px;
 	line-height: 44px;
 }
-
 
 /*-------------------------------*/
 /*       Hamburger-Cross         */
@@ -428,17 +398,17 @@ html {
 		z-index: 1;
 }
 
+/*-------------------------------*/
+/*          Logo-Sidebar         */
+/*-------------------------------*/
 
-
-/*Yo*/
-
-.sidebar-brand a{
+.sidebar-brand a {
 	display: inline;
 	margin-top: 3px;
 	float: left;
 }
 
-.sidebar-brand img{
+.sidebar-brand img {
 	display: inline;
 	width: 60px;
 	height: 60px;
@@ -446,4 +416,15 @@ html {
 	border-radius:50%;
 	margin-top: 5px;
 	margin-left: 15px;
+}
+
+/*-------------------------------*/
+/*            Content            */
+/*-------------------------------*/
+
+.conteudo {
+ width: 80%;
+ height: 500px;
+ margin: 0 auto;
+ background-color: @cor-conteudo;
 }

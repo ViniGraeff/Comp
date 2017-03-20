@@ -41,11 +41,21 @@ h1 {
 }
 .cart {
   display: block;
-  width: 65.56px;
+  width: 5%;
   height: 100%;
   background-color: #1aad2b;
   float: right;
   padding: 13px;
+  text-align: center;
+}
+.titulo {
+  text-align: center;
+}
+.titulo h1 {
+  padding-top: 10px;
+  font-size: 45px;
+  font-family: 'Aldrich', sans-serif;
+  color: #1aad2b;
 }
 /*-----------------------------*/
 .nav .open > a {
@@ -344,12 +354,4 @@ h1 {
   height: 500px;
   margin: 0 auto;
   background-color: #E7E7E8;
-}
-.titulo {
-  text-align: center;
-}
-.titulo h1 {
-  padding-top: 20px;
-  font-size: 50px;
-  font-family: 'Aldrich', sans-serif;
 }

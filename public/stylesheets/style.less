@@ -29,6 +29,8 @@ a {
 
 @page-background: #333;
 
+
+
 // SIDEBAR LINK COLOR VARIABLES
 @side-color-1: #1a1a1a;
 @side-color-2: darken(@side-color-3, 1%);
@@ -86,11 +88,23 @@ h1 {
 
 .cart {
 	display: block;
-	width: 65.56px;
+	width: 5%;
 	height: 100%;
 	background-color: @bg-color;
 	float: right;
 	padding: 13px;
+	text-align: center;
+}
+
+.titulo{
+	text-align: center;
+
+	h1{
+		padding-top: 10px;
+		font-size: 45px;
+		font-family: 'Aldrich', sans-serif;
+		color: @bg-color;
+	}
 }
 
 /*-----------------------------*/
@@ -430,14 +444,4 @@ h1 {
  height: 500px;
  margin: 0 auto;
  background-color: @cor-conteudo;
-}
-
-.titulo{
-	text-align: center;
-
-	h1{
-		padding-top: 20px;
-		font-size: 50px;
-		font-family: 'Aldrich', sans-serif;
-	}
 }

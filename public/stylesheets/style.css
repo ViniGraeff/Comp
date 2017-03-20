@@ -351,7 +351,39 @@ h1 {
 /*-------------------------------*/
 .conteudo {
   width: 80%;
-  height: 500px;
+  height: 90vh;
   margin: 0 auto;
   background-color: #E7E7E8;
+}
+.conteudo .col-md-4 {
+  margin-top: 60px;
+}
+.conteudo .col-md-12 {
+  text-align: center;
+  padding-top: 60px;
+}
+.inicial {
+  width: 100%;
+  height: 330px;
+  margin: 0 auto;
+  background-color: #c9c9c9;
+  text-align: center;
+  box-shadow: 0px 5px 10px #444;
+}
+.inicial:hover {
+  z-index: 5;
+  box-shadow: 0px 20px 40px #444;
+}
+.inicial img {
+  width: 90%;
+  height: 300px;
+  margin-top: 15px;
+}
+.escurecer {
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+.escurecer:hover {
+  background-color: rgba(51, 51, 51, 0.7);
 }

@@ -17,6 +17,9 @@ a {
 // BACKGROUND COLOR
 @bg-color: #1aad2b;
 
+// TOP-NAV COLLOR
+@nav-top: #504E4F;
+
 // TEXT COLOR
 @text-color: #fff;
 
@@ -48,6 +51,7 @@ a {
 body{
 		position: relative;
 		overflow-x: hidden;
+		margin: 0 10%;
 }
 body,
 html {
@@ -56,9 +60,28 @@ html {
 }
 
 
+/*-------------------------------*/
+/*            Top-Nav            */
+/*-------------------------------*/
+
+.nav-top {
+	width: 100%;
+	height: 66.19px;
+	background-color: @nav-top;
+}
+
+.cart {
+	display: block;
+	width: 65.56px;
+	height: 100%;
+	background-color: @bg-color;
+	float: right;
+	padding: 13px;
+}
 
 
 
+/*-----------------------------*/
 
 
 .nav {

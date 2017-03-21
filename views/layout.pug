@@ -9,7 +9,12 @@ html
 		script(src="javascripts/3dcarousel.js")
 		script(src='javascripts/script.js')
 	body
-		block shopping-cart
-		block sidebar
-		block carousel
-		block conteudo
+		include shopping-cart
+		include sidebar
+		include carousel
+		include conteudo
+
+		//- block shopping-cart
+		//- block sidebar
+		//- block carousel
+		//- block conteudo

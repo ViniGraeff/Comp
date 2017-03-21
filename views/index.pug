@@ -16,36 +16,39 @@ block sidebar
 							p Microcontroladores
 					li
 						a(href='#')
-							p Second page
+							p Sensores
 					li
 						a(href='#')
-							p Third page
-					li.dropdown
-						a(class="dropdown-toggle" data-toggle="dropdown" href='#')
-							p Dropdown
-								span.caret
-						ul.dropdown-menu
-							li.dropdown-header
-								Dropdown heading
-							li
-								a(href='#') Action
-							li
-								a(href='#') Another action
-							li
-								a(href='#') Something else here
-							li
-								a(href='#') Separated link
-							li
-								a(href='#') One more separated link
+							p Componentes Eletrônicos
 					li
 						a(href='#')
-							p Page four
+							p Displays
+					//- li.dropdown
+					//- 	a(class="dropdown-toggle" data-toggle="dropdown" href='#')
+					//- 		p Dropdown
+					//- 			span.caret
+					//- 	ul.dropdown-menu
+					//- 		li.dropdown-header
+					//- 			Dropdown heading
+					//- 		li
+					//- 			a(href='#') Action
+					//- 		li
+					//- 			a(href='#') Another action
+					//- 		li
+					//- 			a(href='#') Something else here
+					//- 		li
+					//- 			a(href='#') Separated link
+					//- 		li
+					//- 			a(href='#') One more separated link
 					li
 						a(href='#')
-							p Page 5
+							p Cabos
 					li
 						a(href='#')
-							p Last page
+							p Motores
+					li
+						a(href='#')
+							p Embarcados
 		div#page-content-wrapper
 			button(type='button' class='hamburger is-closed animated fadeInLeft' data-toggle='offcanvas')
 				span.hamb-top
@@ -60,24 +63,11 @@ block shopping-cart
 		a(href='#')
 			div.cart 
 				i(class="fa fa-usd fa-2x" aria-hidden="true")
-		div.titulo
-			h1 Guibigui Componentes Eletrônicos
-
-block conteudo
-	div.conteudo
-		div.col-md-12
-			h1 Principais produtos:
-		div.col-md-4
-			div.inicial(data-toggle='tooltip' title='Conheça a nossa diversidade de Microcontroladores!')
-				img(src='../img/39.jpg')
-		div.col-md-4
-			div.inicial(data-toggle='tooltip' title='Conheça nossos sistemas embarcados!')
-				img(src='../img/emb_inicial.jpg')
-		div.col-md-4
-			div.inicial(data-toggle='tooltip' title='Conheça a nossa diversidade de componentes eletrônicos!')
-				img(src='../img/comp_inicial.jpg')
 
 block carousel
+	div.titulo
+			h1 Guibigui Componentes Eletrônicos
+
 	div.container
 	br
 	div(id="myCarousel" class="carousel slide" data-ride="carousel")
@@ -113,3 +103,17 @@ block carousel
 		a(class="right carousel-control" href="#myCarousel" role="button" data-slide="next")
 				span(class="glyphicon glyphicon-chevron-right" aria-hidden="true")
 				span.sr-only Next
+
+block conteudo
+	div.conteudo
+		div.col-md-12
+			h1 Principais produtos:
+		div.col-md-4
+			div.inicial(data-toggle='tooltip' title='Display Touchscreen 7" Raspberry Pi')
+				img(src='../img/39.jpg')
+		div.col-md-4
+			div.inicial(data-toggle='tooltip' title='IoT Surfboard Globalcode')
+				img(src='../img/65.jpg')
+		div.col-md-4
+			div.inicial(data-toggle='tooltip' title='Kit Jumpers Rígido x140 Unidades')
+				img(src='../img/47.jpg')

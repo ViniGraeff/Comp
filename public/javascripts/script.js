@@ -3,8 +3,6 @@ $(document).ready(function () {
 		$('[data-toggle="tooltip"]').tooltip()
 	});
 
-	$('#example').tooltip(options);
-	
 	var trigger = $('.hamburger'),
 			overlay = $('.overlay'),
 		 isClosed = false;
@@ -31,4 +29,6 @@ $(document).ready(function () {
 	$('[data-toggle="offcanvas"]').click(function () {
 				$('#wrapper').toggleClass('toggled');
 	});
+	
+	$('#example').tooltip(options);
 });

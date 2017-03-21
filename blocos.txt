@@ -1,0 +1,9 @@
+		div.col-md-4
+			div.inicial(data-toggle='tooltip' title='Conheça a nossa diversidade de Microcontroladores!')
+				img(src='../img/mic_inicial.jpg')
+		div.col-md-4
+			div.inicial(data-toggle='tooltip' title='Conheça nossos sistemas embarcados!')
+				img(src='../img/emb_inicial.jpg')
+		div.col-md-4
+			div.inicial(data-toggle='tooltip' title='Conheça a nossa diversidade de componentes eletrônicos!')
+				img(src='../img/comp_inicial.jpg')

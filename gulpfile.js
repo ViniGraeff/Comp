@@ -7,13 +7,13 @@ var nodemon = require('nodemon');
 
 gulp.task('uri', function(){
   gulp.src(__filename)
-  .pipe(open({uri: 'http://localhost:2000'}));
+  .pipe(open({uri: 'http://localhost:61000'}));
 });
 
 
 gulp.task('start', function () {
   nodemon({
-    src: 'localhost:2000'
+    src: 'localhost:61000'
   , ext: 'js html css less'
   , env: { 'NODE_ENV': 'development' }
   })
@@ -36,7 +36,7 @@ gulp.task('bootstrap', function(){
 });
 
 gulp.task('less', function () {
-  return gulp.src('./public/stylesheets/*.less')
+  return gulp.src('./less/*.less')
     .pipe(less())
     .pipe(gulp.dest('./public/stylesheets'));
 });

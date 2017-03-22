@@ -54,6 +54,7 @@ h1 {
 }
 .titulo {
   text-align: center;
+  cursor: pointer;
 }
 .titulo h1 {
   padding-top: 30px;
@@ -356,7 +357,7 @@ h1 {
 .conteudo {
   width: 80%;
   height: auto;
-  min-height: 100%;
+  min-height: 545px;
   overflow: hidden;
   margin: 30px auto;
   background-color: #E7E7E8;

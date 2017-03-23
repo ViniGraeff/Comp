@@ -1,8 +1,5 @@
 {"PIC":[
 	{
-
-	},
-	{
 		"tipo":"PIC",
 		"nome": "Microcontrolador PIC 12F629",
 		"valor": "7,90",
@@ -96,7 +93,7 @@
 	},
 	{
 		"tipo":"SENSOR",
-		"nome": "Acelerômetro e Giroscópio 3 Eixos 6 DOF MPU-6050",
+		"nome": "Acelerômetro e Giroscópio 3 Eixos",
 		"valor": "22,90",
 		"estoque": "78",
 		"descrição": "O sensor MPU-6050 contém em um único chip um acelerômetro e um giroscópio tipo MEMS. São 3 eixos para o acelerômetro e 3 eixos para o giroscópio, sendo ao todo 6 graus de liberdade (6DOF). Não bastasse isso esta placa GY-521 tem um sensor de temperatura embutido no CI MPU6050, permitindo medições entre -40 e +85 ºC. Possui alta precisão devido ao conversor analógico digital de 16-bits para cada canal. Portanto o sensor captura os canais X, Y e Z ao mesmo tempo.",
@@ -105,7 +102,7 @@
 	},
 	{
 		"tipo":"SENSOR",
-		"nome": "Acelerômetro e Giroscópio 9 Eixos 10 DOF MPU-9250 com BMP180",
+		"nome": "Acelerômetro e Giroscópio 9 Eixos",
 		"valor": "89,90",
 		"estoque": "6",
 		"descrição": "Dois módulos em um só! Esse é o módulo MPU9250, que conta também com um sensor de pressão BMP180, reduzindo o custo do seu projeto e facilitando a conexão, pois o módulo usa a interface I2C para se comunicar com o microcontrolador. O MPU9250 é um chip que tem um acelerômetro de 3 eixos, um giroscópio de 3 eixos e magnetômetro (sensor de campo magnético), também de 3 eixos. Aliado ao sensor de pressão BMP180, que se caracteriza pelo baixo consumo de energia, você tem um módulo com 10DOF (Degrees of Freedom), tudo isso em uma minúscula placa.",
@@ -123,7 +120,7 @@
 	},
 	{
 		"tipo":"SENSOR",
-		"nome": "Sensor de Umidade e Temperatura AM2302 DHT22",
+		"nome": "Sensor de Umidade e Temperatura AM2302",
 		"valor": "36,90",
 		"estoque": "21",
 		"descrição": "O DHT22 é um sensor de temperatura e umidade que permite fazer leituras de temperaturas entre -40 a +80 graus Celsius e umidade entre 0 a 100%, sendo muito fácil de usar com Arduino, Raspberry e outros microcontroladores pois possui apenas 1 pino com saída digital. Este sensor AM2302 é compatível com os modelos DHT22/AM2303 e é formado por um sensor de umidade capacitivo e um termistor para medir o ar ao redor, enviando no pino de dados um sinal digital (não é necessário pinos analógicos aqui).",
@@ -177,7 +174,7 @@
 	},
 	{
 		"tipo":"SENSOR",
-		"nome": "Joystick Arduino 3 Eixos",
+		"nome": "Joystick Para Arduino 3 Eixos",
 		"valor": "12,90",
 		"estoque": "24",
 		"descrição": "Este Joystick tem seu princípio de funcionamento através do controle de 2 potenciômetros e um botão. Duas das entradas dos potenciômetros referem-se aos eixos X e Y, sendo que o botão quando pressionado refere-se ao eixo Z. Logo este Joystick contém o total de três interfaces de entradas que são utilizadas para conectar ao eixo X, Y e Z. Este modelo com menos pinos torna-se uma ótima opção para projetos com Arduino pois evita muitas conexões, podendo ser usado como mouse, controle de robôs, games, joystick ps2 e projetos em geral. Confira alguns projetos na seção Blog abaixo!",
@@ -195,7 +192,7 @@
 	},
 	{
 		"tipo":"SENSOR",
-		"nome": "Módulo Sensor IR 5 Canais para Robô Seguidor de Linha",
+		"nome": "Módulo Sensor IR 5 Canais para Robô",
 		"valor": "44,90",
 		"estoque": "13",
 		"descrição": "Com o módulo sensor IR 5 canais você tem um excelente componente para a montagem do seu robô, com 6 sensores IR e 1 switch, para você montar um robô anti-colisão, seguidor de linha ou qualquer outra configuração necessária ao seu projeto. São 5 sensores IR na parte de baixo do sensor, 1 na parte dianteira e 1 switch, que você pode usar para desligar o robô, por exemplo, quando ele tocar em algum obstáculo. O módulo tem ainda leds indicadores para cada um dos sensores, além do led Power (ligado).",
@@ -278,7 +275,7 @@
 	},
 	{
 		"tipo":"COMPONENTE",
-		"nome": "Kit Push Button com Capas Coloridas x50 unidades",
+		"nome": "Kit Push Button com Capas Coloridas x50",
 		"valor": "34,90",
 		"estoque": "29",
 		"descrição": "Kit de chaves tipo push button com capas coloridas, para utilização em projetos eletrônicos em geral como fliperamas, videogames, controle de jogos, etc. Com capas em 7 cores diferentes, permite uma enorme variedade de combinações para incremantar o visual do seu projeto!",
@@ -334,7 +331,7 @@
 	},
 	{
 		"tipo":"DISPLAY",
-		"nome": "Display LCD Nokia 5110",
+		"nome": "Display LCD - Nokia B - 5110",
 		"valor": "24,90",
 		"estoque": "43",
 		"descrição": "Este é um display com ótima relação custo x benefício para o seu projeto, pois se trata de um display gráfico monocromático com resolução de 84x48 pixels, e com ele você pode ter em uma mesma tela gráficos e textos. O Display LCD Nokia 5110 vem com espaço para conectores tanto na parte superior quanto na parte inferior, permitindo que você solde a barra de pinos na posição que achar mais conveniente para o seu projeto. Atenção para alimentação do display, que é de 3.3V. Quanto ao nível de sinal dos pinos de dados, o display é tolerante à 5V assim você pode utilizar sem problemas, por exemplo, com um Arduino Uno.",
@@ -361,7 +358,7 @@
 	},
 	{
 		"tipo":"DISPLAY",
-		"nome": "Painel de LED RGB 32x32",
+		"nome": "Painel de LED RGB de 32x32",
 		"valor": "299,90",
 		"estoque": "3",
 		"descrição": "Crie efeitos visuais incríveis para o seu projeto com o Painel de led RGB 32x32. Com 1024 leds RGB, você cria os mais variados efeitos visuais, animações e jogos. E se apenas um painel não for suficiente, você pode interligar vários deles em cascata. Este painel exige uma fonte de alimentação regulada de 3,3 à 5V com capacidade de pelo menos 2A. Veja na seção de downloads um tutorial de como interligar esse painel ao Arduino.",
@@ -565,7 +562,7 @@
 	},
 	{
 		"tipo":"EMBARCADO",
-		"nome": "Kit Raspberry Pi Start",
+		"nome": "Kit - Raspberry Pi - Starter*",
 		"valor": "379,90",
 		"estoque": "10",
 		"descrição": "O Kit Raspberry Pi Start tem tudo o que você precisa pra começar a criar seus próprios projetos utilizando o mais novo Raspberry Pi 3, a placa mais potente da linha Raspberry. Tudo isso a um ótimo preço e envio para todo o Brasil. O kit contém o material necessário para conectar a placa à um monitor com entrada HDMI, instalar o sistema operacional e também acessar a internet.  Confira na seção blog abaixo alguns tutoriais e projetos que vão ajudar você a explorar as funcionalidades do Kit Raspberry Pi Start.",
@@ -592,7 +589,7 @@
 	},
 	{
 		"tipo":"EMBARCADO",
-		"nome": "IoT Surfboard Globalcode",
+		"nome": "IoT Surfboard Globalcode 1",
 		"valor": "599,90",
 		"estoque": "18",
 		"descrição": "A IoT Surfboard é um placa completa com sensores, controladores e conectividade que facilita a exploração do conceito de IoT (Internet of Things, ou Internet das Coisas) permitindo o controle de dispositivos localmente ou através da rede. São 20 componentes em uma só placa e possibilidades de conexão para inúmeros outros dispositivos à sua escolha. Com a IoT Surfboard você pode aprender desde conceitos básicos de programação até desenvolver aplicações comerciais, ensinar eletrônica, desenvolver produtos, realizar projetos de automação residencial e industrial, entre outros. Confira a Página Oficial da IoT Surfboard com uma descrição detalhada e saiba tudo o que você será capaz de fazer!",
@@ -601,7 +598,7 @@
 	},
 	{
 		"tipo":"EMBARCADO",
-		"nome": "Intel® Galileo Gen 2",
+		"nome": "Intel® Galileo Generation 2",
 		"valor": "469,90",
 		"estoque": "16",
 		"descrição": "RÉCEM CHEGOU: A placa Intel® Galileo Gen 2 acaba de ser lançada e é uma versão atualizada da Intel® Galileo Gen 1. Assim como a versão anterior esta placa também possui a certificação para Arduino, pois é baseada no processador Intel® Quark SoC X1000 e compatível com a pinagem padrão e software IDE da Arduino. Agora ficou fácil você comprar seu Intel® Galileo Gen 2 por um ótimo preço e com envio para todo o Brasil.",

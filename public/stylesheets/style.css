@@ -54,9 +54,11 @@ h1 {
 }
 .titulo {
   text-align: center;
-  cursor: pointer;
+  width: 70%;
+  margin: 0 auto;
 }
 .titulo h1 {
+  width: 100%;
   padding-top: 30px;
   font-size: 45px;
   font-family: 'Aldrich', sans-serif;
@@ -168,6 +170,9 @@ h1 {
 }
 .sidebar-nav li:nth-child(9):before {
   background-color: #179725;
+}
+.sidebar-nav li:nth-child(10):before {
+  background-color: #169224;
 }
 .sidebar-nav li:hover:before {
   transition: width 0.2s ease-in;

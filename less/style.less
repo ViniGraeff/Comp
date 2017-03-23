@@ -48,6 +48,7 @@ a {
 @side-color-7: darken(@side-color-6, 1%);
 @side-color-8: darken(@side-color-7, 1%);
 @side-color-9: darken(@side-color-8, 1%);
+@side-color-10: darken(@side-color-9, 1%);
 
 // HAMBURGER COLOR
 @hamburger-color-closed: fadeout(@bg-color, 30);
@@ -109,9 +110,11 @@ h1 {
 
 .titulo{
 	text-align: center;
-	cursor: pointer;
+	width: 70%;
+	margin: 0 auto;
 
 	h1{
+		width: 100%;
 		padding-top: 30px;
 		font-size: 45px;
 		font-family: 'Aldrich', sans-serif;
@@ -248,6 +251,11 @@ h1 {
 		&:nth-child(9) {
 			&:before {
 				background-color: @side-color-9;
+			}
+		}
+		&:nth-child(10) {
+			&:before {
+				background-color: @side-color-10;
 			}
 		}
 		&:hover {

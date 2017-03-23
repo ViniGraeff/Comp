@@ -1,10 +1,58 @@
 div.conteudo
 	div.col-md-12
 		h1 Catálogo
-	- for (var i = 1; i < dados.PIC.length; i++){
+	- for (var i = 0; i < dados.PIC.length; i++){
 		div.col-md-3
 			div.inicial2(data-toggle='tooltip' title=dados.PIC[i].nome)
 				h3 #{dados.PIC[i].nome}
-				img(src='../img/'+dados.PIC[i].código+'.jpg')
+				a(href="#"): img(src='../img/'+dados.PIC[i].código+'.jpg')
 				h4 R$ #{dados.PIC[i].valor}
+	-}
+
+	- for (var i = 0; i < dados.SENSORES.length; i++){
+		div.col-md-3
+			div.inicial2(data-toggle='tooltip' title=dados.SENSORES[i].nome)
+				h3 #{dados.SENSORES[i].nome}
+				a(href="#"): img(src='../img/'+dados.SENSORES[i].código+'.jpg')
+				h4 R$ #{dados.SENSORES[i].valor}
+	-}
+
+	- for (var i = 0; i < dados.DISPLAYS.length; i++){
+		div.col-md-3
+			div.inicial2(data-toggle='tooltip' title=dados.DISPLAYS[i].nome)
+				h3 #{dados.DISPLAYS[i].nome}
+				a(href="#"): img(src='../img/'+dados.DISPLAYS[i].código+'.jpg')
+				h4 R$ #{dados.DISPLAYS[i].valor}
+	-}
+
+	- for (var i = 0; i < dados.COMPONENTES.length; i++){
+		div.col-md-3
+			div.inicial2(data-toggle='tooltip' title=dados.COMPONENTES[i].nome)
+				h3 #{dados.COMPONENTES[i].nome}
+				a(href="#"): img(src='../img/'+dados.COMPONENTES[i].código+'.jpg')
+				h4 R$ #{dados.COMPONENTES[i].valor}
+	-}
+
+	- for (var i = 0; i < dados.CABOS.length; i++){
+		div.col-md-3
+			div.inicial2(data-toggle='tooltip' title=dados.CABOS[i].nome)
+				h3 #{dados.CABOS[i].nome}
+				a(href="#"): img(src='../img/'+dados.CABOS[i].código+'.jpg')
+				h4 R$ #{dados.CABOS[i].valor}
+	-}
+
+	- for (var i = 0; i < dados.MOTORES.length; i++){
+		div.col-md-3
+			div.inicial2(data-toggle='tooltip' title=dados.MOTORES[i].nome)
+				h3 #{dados.MOTORES[i].nome}
+				a(href="#"): img(src='../img/'+dados.MOTORES[i].código+'.jpg')
+				h4 R$ #{dados.MOTORES[i].valor}
+	-}
+
+	- for (var i = 0; i < dados.EMBARCADOS.length; i++){
+		div.col-md-3
+			div.inicial2(data-toggle='tooltip' title=dados.EMBARCADOS[i].nome)
+				h3 #{dados.EMBARCADOS[i].nome}
+				a(href="#"): img(src='../img/'+dados.EMBARCADOS[i].código+'.jpg')
+				h4 R$ #{dados.EMBARCADOS[i].valor}
 	-}

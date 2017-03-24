@@ -1,11 +1,65 @@
 div.conteudo
 	div.col-md-12
 		h1 Catálogo
+	div.col-md-12
+		h3 Filtros
+			//- select(class="form-control" id="filtro")
+			//- 	option(value="1") Todos
+			//- 	option(value="2") Microcontroladores
+			//- 	option(value="3") Sensores
+			//- 	option(value="4") Displays
+			//- 	option(value="5") Componentes
+			//- 	option(value="6") Cabos
+			//- 	option(value="7") Motores
+			//- 	option(value="8") Embarcados
+	div.col-md-3
+		div.inicial3
+			img(src="../img/todos.jpg")
+			h5 Todos
+	div.col-md-3
+		div.inicial3
+			img(src="../img/mic_inicial.jpg")
+			h5 Micro
+	div.col-md-3
+		div.inicial3
+			img(src="../img/10.jpg")
+			h5 Sensores
+	div.col-md-3
+		div.inicial3
+			img(src="../img/33.jpg")
+			h5 Displays
+	div.col-md-3
+		div.inicial3
+			img(src="../img/comp_inicial.jpg")
+			h5 Componentes
+	div.col-md-3
+		div.inicial3
+			img(src="../img/46.jpg")
+			h5 Cabos
+	div.col-md-3
+		div.inicial3
+			img(src="../img/52.jpg")
+			h5 Motores
+	div.col-md-3
+		div.inicial3
+			img(src="../img/emb_inicial.jpg")
+			h5 Embarcados
+
 	- for (var i = 0; i < dados.PIC.length; i++){
 		div.col-md-3
 			div.inicial2(data-toggle='tooltip' title=dados.PIC[i].nome)
 				h3 #{dados.PIC[i].nome}
-				a(href="#"): img(src='../img/'+dados.PIC[i].código+'.jpg')
+				div.grid
+					figure.effect-lexi
+						a(href="#"): img(src='../img/'+dados.PIC[i].código+'.jpg')
+						figcaption
+							p
+								a(href="#") 
+									i.fa.fa-fw.fa-user
+								a(href="#") 
+									i.fa.fa-fw.fa-heart
+								a(href="#") 
+									i.fa.fa-fw.fa-cog
 				h4 R$ #{dados.PIC[i].valor}
 	-}
 

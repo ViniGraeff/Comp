@@ -1,7 +1,11 @@
+var servidor="http://localhost:23100/db/json";
+var micro=0, sensores=0, displays=0, componentes=0, cabos=0, motores=0, embarcados=0;
+
 $(document).ready(function () {
 	$(function () {
 		$('[data-toggle="tooltip"]').tooltip()
 	});
+	print();
 
 	var trigger = $('.hamburger'),
 			overlay = $('.overlay'),
@@ -18,7 +22,7 @@ $(document).ready(function () {
 				trigger.removeClass('is-open');
 				trigger.addClass('is-closed');
 				isClosed = false;
-			} else {   
+			} else {
 				overlay.show();
 				trigger.removeClass('is-closed');
 				trigger.addClass('is-open');
@@ -30,5 +34,142 @@ $(document).ready(function () {
 				$('#wrapper').toggleClass('toggled');
 	});
 	
-	$('#example').tooltip(options);
+	$('#todos').click(function(){
+		micro=0;
+		sensores=0;
+		displays=0;
+		componentes=0;
+		cabos=0;
+		motores=0;
+		embarcados=0;
+		print();
+	});
+	$('#micro').click(function(){
+		micro=0;
+		sensores=1;
+		displays=1;
+		componentes=1;
+		cabos=1;
+		motores=1;
+		embarcados=1;
+		print();
+	});
+	$('#sensores').click(function(){
+		micro=1;
+		sensores=0;
+		displays=1;
+		componentes=1;
+		cabos=1;
+		motores=1;
+		embarcados=1;
+		print();
+	});
+	$('#displays').click(function(){
+		micro=1;
+		sensores=1;
+		displays=0;
+		componentes=1;
+		cabos=1;
+		motores=1;
+		embarcados=1;
+		print();
+	});
+	$('#componentes').click(function(){
+		micro=1;
+		sensores=1;
+		displays=1;
+		componentes=0;
+		cabos=1;
+		motores=1;
+		embarcados=1;
+		print();
+	});
+	$('#cabos').click(function(){
+		micro=1;
+		sensores=1;
+		displays=1;
+		componentes=1;
+		cabos=0;
+		motores=1;
+		embarcados=1;
+		print();
+	});
+	$('#motores').click(function(){
+		micro=1;
+		sensores=1;
+		displays=1;
+		componentes=1;
+		cabos=1;
+		motores=0;
+		embarcados=1;
+		print();
+	});
+	$('#embarcados').click(function(){
+		micro=1;
+		sensores=1;
+		displays=1;
+		componentes=1;
+		cabos=1;
+		motores=1;
+		embarcados=0;
+		print();
+	});
+
 });
+
+function print(){
+
+	$('#print').empty();
+	$.get(servidor, function(data) {
+		if(micro==0){
+			for (var i = 0; i < data.PIC.length; i++){
+				// $('#table').append('<tr><td>'+text[i].id+'</td><td>'+text[i].nome+'</td><td>'+'R$ '+str+'</td><td>'+'<img src="img/happybatman.jpg" alt= "Batman Feliz" style="width:40px;height:40px; border-radius:50%;";>'+'</td><td>'+text[i].estoque+'</td><td>'+'<button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="modal" data-target="#abrir" onclick="preencher('+i+')"></span></button>'+'</td><td>'+'<button type="button" class="btn btn-default btn-sm" onclick="deleta('+aux+')" data-toggle="modal" data-target="#abrir"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>'+'</td></tr>');
+				$('#print').append('<div class="col-md-3"><div class="inicial2" data-toggle="tooltip" title="'+data.PIC[i].nome+'""><h3>'+data.PIC[i].nome+'</h3><div class="grid"><figure class="effect-lexi"><a href="#"><img src="../img/'+data.PIC[i].código+'.jpg"></a><figcaption><p><a href="#"><i class="fa fa-fw fa-user"></i></a><a href="#"><i class="fa fa-fw fa-heart"></i></a><a href="#"><i class="fa fa-fw fa-cog"></i></a></p></figcaption></figure></div><h4>R$ '+data.PIC[i].valor+'</h4></div></div>');
+			}
+		}
+
+		if(sensores==0){
+			for (var i = 0; i < data.SENSORES.length; i++){
+				// $('#table').append('<tr><td>'+text[i].id+'</td><td>'+text[i].nome+'</td><td>'+'R$ '+str+'</td><td>'+'<img src="img/happybatman.jpg" alt= "Batman Feliz" style="width:40px;height:40px; border-radius:50%;";>'+'</td><td>'+text[i].estoque+'</td><td>'+'<button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="modal" data-target="#abrir" onclick="preencher('+i+')"></span></button>'+'</td><td>'+'<button type="button" class="btn btn-default btn-sm" onclick="deleta('+aux+')" data-toggle="modal" data-target="#abrir"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>'+'</td></tr>');
+				$('#print').append('<div class="col-md-3"><div class="inicial2" data-toggle="tooltip" title="'+data.SENSORES[i].nome+'""><h3>'+data.SENSORES[i].nome+'</h3><div class="grid"><figure class="effect-lexi"><a href="#"><img src="../img/'+data.SENSORES[i].código+'.jpg"></a><figcaption><p><a href="#"><i class="fa fa-fw fa-user"></i></a><a href="#"><i class="fa fa-fw fa-heart"></i></a><a href="#"><i class="fa fa-fw fa-cog"></i></a></p></figcaption></figure></div><h4>R$ '+data.SENSORES[i].valor+'</h4></div></div>');
+			}
+		}
+
+		if(displays==0){
+			for (var i = 0; i < data.DISPLAYS.length; i++){
+				// $('#table').append('<tr><td>'+text[i].id+'</td><td>'+text[i].nome+'</td><td>'+'R$ '+str+'</td><td>'+'<img src="img/happybatman.jpg" alt= "Batman Feliz" style="width:40px;height:40px; border-radius:50%;";>'+'</td><td>'+text[i].estoque+'</td><td>'+'<button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="modal" data-target="#abrir" onclick="preencher('+i+')"></span></button>'+'</td><td>'+'<button type="button" class="btn btn-default btn-sm" onclick="deleta('+aux+')" data-toggle="modal" data-target="#abrir"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>'+'</td></tr>');
+				$('#print').append('<div class="col-md-3"><div class="inicial2" data-toggle="tooltip" title="'+data.DISPLAYS[i].nome+'""><h3>'+data.DISPLAYS[i].nome+'</h3><div class="grid"><figure class="effect-lexi"><a href="#"><img src="../img/'+data.DISPLAYS[i].código+'.jpg"></a><figcaption><p><a href="#"><i class="fa fa-fw fa-user"></i></a><a href="#"><i class="fa fa-fw fa-heart"></i></a><a href="#"><i class="fa fa-fw fa-cog"></i></a></p></figcaption></figure></div><h4>R$ '+data.DISPLAYS[i].valor+'</h4></div></div>');
+			}
+		}
+
+		if(componentes==0){
+			for (var i = 0; i < data.COMPONENTES.length; i++){
+				// $('#table').append('<tr><td>'+text[i].id+'</td><td>'+text[i].nome+'</td><td>'+'R$ '+str+'</td><td>'+'<img src="img/happybatman.jpg" alt= "Batman Feliz" style="width:40px;height:40px; border-radius:50%;";>'+'</td><td>'+text[i].estoque+'</td><td>'+'<button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="modal" data-target="#abrir" onclick="preencher('+i+')"></span></button>'+'</td><td>'+'<button type="button" class="btn btn-default btn-sm" onclick="deleta('+aux+')" data-toggle="modal" data-target="#abrir"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>'+'</td></tr>');
+				$('#print').append('<div class="col-md-3"><div class="inicial2" data-toggle="tooltip" title="'+data.COMPONENTES[i].nome+'""><h3>'+data.COMPONENTES[i].nome+'</h3><div class="grid"><figure class="effect-lexi"><a href="#"><img src="../img/'+data.COMPONENTES[i].código+'.jpg"></a><figcaption><p><a href="#"><i class="fa fa-fw fa-user"></i></a><a href="#"><i class="fa fa-fw fa-heart"></i></a><a href="#"><i class="fa fa-fw fa-cog"></i></a></p></figcaption></figure></div><h4>R$ '+data.COMPONENTES[i].valor+'</h4></div></div>');
+			}
+		}
+
+		if(cabos==0){
+			for (var i = 0; i < data.CABOS.length; i++){
+				// $('#table').append('<tr><td>'+text[i].id+'</td><td>'+text[i].nome+'</td><td>'+'R$ '+str+'</td><td>'+'<img src="img/happybatman.jpg" alt= "Batman Feliz" style="width:40px;height:40px; border-radius:50%;";>'+'</td><td>'+text[i].estoque+'</td><td>'+'<button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="modal" data-target="#abrir" onclick="preencher('+i+')"></span></button>'+'</td><td>'+'<button type="button" class="btn btn-default btn-sm" onclick="deleta('+aux+')" data-toggle="modal" data-target="#abrir"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>'+'</td></tr>');
+				$('#print').append('<div class="col-md-3"><div class="inicial2" data-toggle="tooltip" title="'+data.CABOS[i].nome+'""><h3>'+data.CABOS[i].nome+'</h3><div class="grid"><figure class="effect-lexi"><a href="#"><img src="../img/'+data.CABOS[i].código+'.jpg"></a><figcaption><p><a href="#"><i class="fa fa-fw fa-user"></i></a><a href="#"><i class="fa fa-fw fa-heart"></i></a><a href="#"><i class="fa fa-fw fa-cog"></i></a></p></figcaption></figure></div><h4>R$ '+data.CABOS[i].valor+'</h4></div></div>');
+			}
+		}
+
+		if(motores==0){
+			for (var i = 0; i < data.MOTORES.length; i++){
+				// $('#table').append('<tr><td>'+text[i].id+'</td><td>'+text[i].nome+'</td><td>'+'R$ '+str+'</td><td>'+'<img src="img/happybatman.jpg" alt= "Batman Feliz" style="width:40px;height:40px; border-radius:50%;";>'+'</td><td>'+text[i].estoque+'</td><td>'+'<button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="modal" data-target="#abrir" onclick="preencher('+i+')"></span></button>'+'</td><td>'+'<button type="button" class="btn btn-default btn-sm" onclick="deleta('+aux+')" data-toggle="modal" data-target="#abrir"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>'+'</td></tr>');
+				$('#print').append('<div class="col-md-3"><div class="inicial2" data-toggle="tooltip" title="'+data.MOTORES[i].nome+'""><h3>'+data.MOTORES[i].nome+'</h3><div class="grid"><figure class="effect-lexi"><a href="#"><img src="../img/'+data.MOTORES[i].código+'.jpg"></a><figcaption><p><a href="#"><i class="fa fa-fw fa-user"></i></a><a href="#"><i class="fa fa-fw fa-heart"></i></a><a href="#"><i class="fa fa-fw fa-cog"></i></a></p></figcaption></figure></div><h4>R$ '+data.MOTORES[i].valor+'</h4></div></div>');
+			}
+		}
+
+		if(embarcados==0){
+			for (var i = 0; i < data.EMBARCADOS.length; i++){
+				// $('#table').append('<tr><td>'+text[i].id+'</td><td>'+text[i].nome+'</td><td>'+'R$ '+str+'</td><td>'+'<img src="img/happybatman.jpg" alt= "Batman Feliz" style="width:40px;height:40px; border-radius:50%;";>'+'</td><td>'+text[i].estoque+'</td><td>'+'<button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="modal" data-target="#abrir" onclick="preencher('+i+')"></span></button>'+'</td><td>'+'<button type="button" class="btn btn-default btn-sm" onclick="deleta('+aux+')" data-toggle="modal" data-target="#abrir"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>'+'</td></tr>');
+				$('#print').append('<div class="col-md-3"><div class="inicial2" data-toggle="tooltip" title="'+data.EMBARCADOS[i].nome+'""><h3>'+data.EMBARCADOS[i].nome+'</h3><div class="grid"><figure class="effect-lexi"><a href="#"><img src="../img/'+data.EMBARCADOS[i].código+'.jpg"></a><figcaption><p><a href="#"><i class="fa fa-fw fa-user"></i></a><a href="#"><i class="fa fa-fw fa-heart"></i></a><a href="#"><i class="fa fa-fw fa-cog"></i></a></p></figcaption></figure></div><h4>R$ '+data.EMBARCADOS[i].valor+'</h4></div></div>');
+			}
+		}
+
+	});
+
+}

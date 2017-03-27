@@ -3,110 +3,38 @@ div.conteudo
 		h1 Catálogo
 	div.col-md-12
 		h3 Filtros
-			//- select(class="form-control" id="filtro")
-			//- 	option(value="1") Todos
-			//- 	option(value="2") Microcontroladores
-			//- 	option(value="3") Sensores
-			//- 	option(value="4") Displays
-			//- 	option(value="5") Componentes
-			//- 	option(value="6") Cabos
-			//- 	option(value="7") Motores
-			//- 	option(value="8") Embarcados
+		
 	div.col-md-3
-		div.inicial3
+		div.inicial3#todos
 			img(src="../img/todos.jpg")
 			h5 Todos
 	div.col-md-3
-		div.inicial3
+		div.inicial3#micro
 			img(src="../img/mic_inicial.jpg")
 			h5 Micro
 	div.col-md-3
-		div.inicial3
+		div.inicial3#sensores
 			img(src="../img/10.jpg")
 			h5 Sensores
 	div.col-md-3
-		div.inicial3
+		div.inicial3#displays
 			img(src="../img/33.jpg")
 			h5 Displays
 	div.col-md-3
-		div.inicial3
+		div.inicial3#componentes
 			img(src="../img/comp_inicial.jpg")
 			h5 Componentes
 	div.col-md-3
-		div.inicial3
+		div.inicial3#cabos
 			img(src="../img/46.jpg")
 			h5 Cabos
 	div.col-md-3
-		div.inicial3
+		div.inicial3#motores
 			img(src="../img/52.jpg")
 			h5 Motores
 	div.col-md-3
-		div.inicial3
+		div.inicial3#embarcados
 			img(src="../img/emb_inicial.jpg")
 			h5 Embarcados
 
-	- for (var i = 0; i < dados.PIC.length; i++){
-		div.col-md-3
-			div.inicial2(data-toggle='tooltip' title=dados.PIC[i].nome)
-				h3 #{dados.PIC[i].nome}
-				div.grid
-					figure.effect-lexi
-						a(href="#"): img(src='../img/'+dados.PIC[i].código+'.jpg')
-						figcaption
-							p
-								a(href="#") 
-									i.fa.fa-fw.fa-user
-								a(href="#") 
-									i.fa.fa-fw.fa-heart
-								a(href="#") 
-									i.fa.fa-fw.fa-cog
-				h4 R$ #{dados.PIC[i].valor}
-	-}
-
-	- for (var i = 0; i < dados.SENSORES.length; i++){
-		div.col-md-3
-			div.inicial2(data-toggle='tooltip' title=dados.SENSORES[i].nome)
-				h3 #{dados.SENSORES[i].nome}
-				a(href="#"): img(src='../img/'+dados.SENSORES[i].código+'.jpg')
-				h4 R$ #{dados.SENSORES[i].valor}
-	-}
-
-	- for (var i = 0; i < dados.DISPLAYS.length; i++){
-		div.col-md-3
-			div.inicial2(data-toggle='tooltip' title=dados.DISPLAYS[i].nome)
-				h3 #{dados.DISPLAYS[i].nome}
-				a(href="#"): img(src='../img/'+dados.DISPLAYS[i].código+'.jpg')
-				h4 R$ #{dados.DISPLAYS[i].valor}
-	-}
-
-	- for (var i = 0; i < dados.COMPONENTES.length; i++){
-		div.col-md-3
-			div.inicial2(data-toggle='tooltip' title=dados.COMPONENTES[i].nome)
-				h3 #{dados.COMPONENTES[i].nome}
-				a(href="#"): img(src='../img/'+dados.COMPONENTES[i].código+'.jpg')
-				h4 R$ #{dados.COMPONENTES[i].valor}
-	-}
-
-	- for (var i = 0; i < dados.CABOS.length; i++){
-		div.col-md-3
-			div.inicial2(data-toggle='tooltip' title=dados.CABOS[i].nome)
-				h3 #{dados.CABOS[i].nome}
-				a(href="#"): img(src='../img/'+dados.CABOS[i].código+'.jpg')
-				h4 R$ #{dados.CABOS[i].valor}
-	-}
-
-	- for (var i = 0; i < dados.MOTORES.length; i++){
-		div.col-md-3
-			div.inicial2(data-toggle='tooltip' title=dados.MOTORES[i].nome)
-				h3 #{dados.MOTORES[i].nome}
-				a(href="#"): img(src='../img/'+dados.MOTORES[i].código+'.jpg')
-				h4 R$ #{dados.MOTORES[i].valor}
-	-}
-
-	- for (var i = 0; i < dados.EMBARCADOS.length; i++){
-		div.col-md-3
-			div.inicial2(data-toggle='tooltip' title=dados.EMBARCADOS[i].nome)
-				h3 #{dados.EMBARCADOS[i].nome}
-				a(href="#"): img(src='../img/'+dados.EMBARCADOS[i].código+'.jpg')
-				h4 R$ #{dados.EMBARCADOS[i].valor}
-	-}
+	div#print

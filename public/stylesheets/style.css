@@ -422,6 +422,7 @@ h1 {
   margin-left: 16.5px;
 }
 .inicial3 {
+  cursor: pointer;
   text-decoration: none;
   width: 100%;
   height: 50px;
@@ -495,11 +496,11 @@ h3 {
   list-style: none;
   text-align: center;
   width: 100%;
+  height: 235px;
 }
 /* Common style */
 .grid figure {
   position: relative;
-  float: left;
   overflow: hidden;
   margin: 0 auto;
   min-width: 215.81px;
@@ -570,8 +571,7 @@ figure.effect-lexi {
 figure.effect-lexi img {
   margin: -10px 0 0 -10px;
   max-width: none;
-  width: -webkit-calc(110%);
-  width: calc(110%);
+  width: 105%;
   opacity: 0.9;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
@@ -587,7 +587,7 @@ figure.effect-lexi p {
 }
 figure.effect-lexi figcaption::before {
   position: absolute;
-  right: -100px;
+  right: -73px;
   bottom: -100px;
   width: 200px;
   height: 200px;

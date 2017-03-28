@@ -41,13 +41,13 @@ h1 {
   color: #333;
 }
 .nav-top a:hover {
-  color: #E7E7E8;
+  color: #f5f5f5;
 }
 .cart {
   display: block;
   width: 5%;
   height: 100%;
-  background-color: #1aad2b;
+  background-color: #007fff;
   float: right;
   padding: 13px;
   text-align: center;
@@ -62,7 +62,7 @@ h1 {
   padding-top: 30px;
   font-size: 45px;
   font-family: 'Aldrich', sans-serif;
-  color: #1aad2b;
+  color: #007fff;
 }
 /*-----------------------------*/
 .nav .open > a {
@@ -148,31 +148,31 @@ h1 {
   color: #ffffff;
 }
 .sidebar-nav li:nth-child(2):before {
-  background-color: #19a429;
+  background-color: #007af5;
 }
 .sidebar-nav li:nth-child(3):before {
-  background-color: #19a92a;
+  background-color: #007cfa;
 }
 .sidebar-nav li:nth-child(4):before {
-  background-color: #1aad2b;
+  background-color: #007fff;
 }
 .sidebar-nav li:nth-child(5):before {
-  background-color: #19a92a;
+  background-color: #007cfa;
 }
 .sidebar-nav li:nth-child(6):before {
-  background-color: #19a429;
+  background-color: #007af5;
 }
 .sidebar-nav li:nth-child(7):before {
-  background-color: #18a028;
+  background-color: #0077f0;
 }
 .sidebar-nav li:nth-child(8):before {
-  background-color: #179b27;
+  background-color: #0075eb;
 }
 .sidebar-nav li:nth-child(9):before {
-  background-color: #179725;
+  background-color: #0072e5;
 }
 .sidebar-nav li:nth-child(10):before {
-  background-color: #169224;
+  background-color: #0070e0;
 }
 .sidebar-nav li:hover:before {
   transition: width 0.2s ease-in;
@@ -211,7 +211,7 @@ h1 {
 .sidebar-nav > .sidebar-brand {
   font-size: 20px;
   height: 65px;
-  line-height: 44px;
+  line-height: 42px;
 }
 /*-------------------------------*/
 /*       Hamburger-Cross         */
@@ -264,17 +264,17 @@ h1 {
 }
 .hamburger.is-closed .hamb-top {
   -webkit-transition: all 0.35s ease-in-out;
-  background-color: rgba(26, 173, 43, 0.7);
+  background-color: rgba(0, 127, 255, 0.7);
   top: 5px;
 }
 .hamburger.is-closed .hamb-middle {
-  background-color: rgba(26, 173, 43, 0.7);
+  background-color: rgba(0, 127, 255, 0.7);
   margin-top: -2px;
   top: 50%;
 }
 .hamburger.is-closed .hamb-bottom {
   -webkit-transition: all 0.35s ease-in-out;
-  background-color: rgba(26, 173, 43, 0.7);
+  background-color: rgba(0, 127, 255, 0.7);
   bottom: 5px;
 }
 .hamburger.is-closed .hamb-top,
@@ -291,18 +291,18 @@ h1 {
 .hamburger.is-open .hamb-top {
   -webkit-transform: rotate(45deg);
   -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
-  background-color: #1aad2b;
+  background-color: #007fff;
   margin-top: -2px;
   top: 50%;
 }
 .hamburger.is-open .hamb-middle {
-  background-color: #1aad2b;
+  background-color: #007fff;
   display: none;
 }
 .hamburger.is-open .hamb-bottom {
   -webkit-transform: rotate(-45deg);
   -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
-  background-color: #1aad2b;
+  background-color: #007fff;
   margin-top: -2px;
   top: 50%;
 }
@@ -365,7 +365,8 @@ h1 {
   min-height: 545px;
   overflow: hidden;
   margin: 30px auto;
-  background-color: #E7E7E8;
+  background-color: #f5f5f5;
+  color: #007fff;
 }
 .conteudo .col-md-4 {
   margin-top: 0;
@@ -401,7 +402,7 @@ h1 {
 .inicial2 {
   cursor: pointer;
   width: 100%;
-  height: 342px;
+  height: 360px;
   margin: 15px auto;
   background-color: #c9c9c9;
   text-align: center;
@@ -417,7 +418,6 @@ h1 {
 }
 .inicial2 h4 {
   font-size: 25px;
-  color: #092939;
   float: left;
   margin-left: 16.5px;
 }
@@ -427,7 +427,7 @@ h1 {
   width: 100%;
   height: 50px;
   margin: 15px auto;
-  background-color: #c9c9c9;
+  background-color: #0a0a0c;
   text-align: center;
   box-shadow: 0px 5px 10px #444;
   z-index: 5;
@@ -468,7 +468,7 @@ h1 {
   margin: auto;
 }
 .carousel {
-  background: #1aad2b;
+  background: #007fff;
   height: 469px;
   width: 80%;
   margin: 0 auto;
@@ -496,14 +496,14 @@ h3 {
   list-style: none;
   text-align: center;
   width: 100%;
-  height: 235px;
+  height: 71%;
 }
 /* Common style */
 .grid figure {
   position: relative;
   overflow: hidden;
   margin: 0 auto;
-  min-width: 215.81px;
+  min-width: 100%;
   max-width: 480px;
   max-height: 360px;
   width: 48%;
@@ -634,4 +634,13 @@ figure.effect-lexi:hover p {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+}
+.modalcarrinho {
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+  background-color: green;
+  position: absolute;
+  z-index: 1001;
+  display: none;
 }

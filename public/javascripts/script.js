@@ -1,4 +1,4 @@
-var servidor="http://localhost:23100/db/json";
+var servidor="http://localhost:23200/db/json";
 var micro=0, sensores=0, displays=0, componentes=0, cabos=0, motores=0, embarcados=0;
 
 $(document).ready(function () {

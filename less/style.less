@@ -99,6 +99,8 @@ h1 {
 	}
 }
 
+
+
 .cart {
 	display: block;
 	width: 5%;
@@ -107,6 +109,10 @@ h1 {
 	float: right;
 	padding: 13px;
 	text-align: center;
+	cursor: pointer;
+	&:hover{
+			color: @cor-conteudo;
+		}
 }
 
 .titulo{
@@ -586,7 +592,7 @@ h1 {
   }
 
 .carousel {
-	background: @bg-color;
+	background: #34495e;
 	height: 469px;
 	width: 80%;
 	margin: 0 auto;
@@ -785,6 +791,48 @@ figure.effect-lexi:hover p {
 	min-height: 200px;
 	background-color: green;
 	position:absolute;
-	z-index:1001;
+	z-index:1005;
 	display: none;
+}
+
+.modalsearch {
+	width: 41%;
+	float: right;
+	height:auto;
+	min-height: 200px;
+	background-color: @bg-color;
+	position:absolute;
+	z-index:1001;
+	left: 59%;
+	top: 66.19px;
+/*	display: none;*/
+}
+
+.container {
+	padding:10px 10px;
+}
+
+.form-control {
+	width: 46.5%;
+}
+
+.imgsearch {
+	width: 100px;
+	height: 100px;
+	img{
+		width: 100%;
+		height: 100%;
+	}
+}
+
+#filter-records{
+	max-height: 600px;
+	overflow-y: auto;
+	width: 93%;
+}
+.well {
+	margin-right: 50px;
+	float: left;
+	width: 47.2%;
+	border-radius: 5px;
 }

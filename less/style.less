@@ -7,6 +7,26 @@ a {
 	color: #00B7FF;
 }*/
 
+
+/* For the "inset" look only */
+html {
+	overflow: auto;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-track {
+	background: #050b0b;
+	border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+	background: @azul-escuro;
+	border-radius: 5px;
+}
+
+
 @import "http://designmodo.github.io/Flat-UI/dist/css/flat-ui.min.css";
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css";
 @import "https://daneden.github.io/animate.css/animate.min.css";
@@ -17,6 +37,9 @@ a {
 
 // BACKGROUND COLOR
 @bg-color: #007fff;
+
+//AZUL ESCURO
+@azul-escuro: #34495e;
 
 // TOP-NAV COLLOR
 @nav-top: #333;
@@ -592,7 +615,7 @@ h1 {
   }
 
 .carousel {
-	background: #34495e;
+	background: @azul-escuro;
 	height: 469px;
 	width: 80%;
 	margin: 0 auto;
@@ -799,13 +822,13 @@ figure.effect-lexi:hover p {
 	width: 41%;
 	float: right;
 	height:auto;
-	min-height: 200px;
+	min-height: 62px;
 	background-color: @bg-color;
 	position:absolute;
 	z-index:1001;
 	left: 59%;
 	top: 66.19px;
-/*	display: none;*/
+	display: none;
 }
 
 .container {
@@ -813,7 +836,8 @@ figure.effect-lexi:hover p {
 }
 
 .form-control {
-	width: 46.5%;
+	width: 100%;
+	margin-bottom: 10px;
 }
 
 .imgsearch {
@@ -826,13 +850,25 @@ figure.effect-lexi:hover p {
 }
 
 #filter-records{
-	max-height: 600px;
+	max-height: 384px;
 	overflow-y: auto;
-	width: 93%;
+	width: 100%;
+	overflow-x: hidden;
 }
 .well {
 	margin-right: 50px;
-	float: left;
-	width: 47.2%;
+	width: 100%;
 	border-radius: 5px;
+}
+
+.searchOut {
+	padding: 10px 10px 10px 10px;
+
+	.col-md-12{
+		margin-left: 16px;
+	}
+}
+
+.form-group {
+    margin-bottom: 0;
 }

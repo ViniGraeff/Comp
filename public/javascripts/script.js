@@ -1,4 +1,4 @@
-var servidor="http://localhost:24300/db/json";
+var servidor="http://localhost:3250/db/json";
 var micro=0, sensores=0, displays=0, componentes=0, cabos=0, motores=0, embarcados=0;
 
 $(document).ready(function () {
@@ -6,6 +6,10 @@ $(document).ready(function () {
 			$('[data-toggle="tooltip"]').tooltip()
 	});
 	print();
+
+	$("input").blur(function(){
+        $('.modalsearch').fadeToggle();
+    });
 
 	var trigger = $('.hamburger'),
 		overlay = $('.overlay'),
@@ -35,7 +39,16 @@ $(document).ready(function () {
 	});
 	
 	$('#cart').click(function(){
-		$('.modalcarrinho').show();
+		$('.modalcarrinho').fadeIn();
+		$('.modalsearch').hide();
+	});
+
+	$('#botFechar').click(function(){
+		$('.modalcarrinho').fadeOut();
+	});
+
+	$('#search').click(function(){
+		$('.modalsearch').fadeToggle();
 	});
 
 	$('#todos').click(function(){

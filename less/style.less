@@ -113,6 +113,8 @@ h1 {
 	width: 100%;
 	height: 66.19px;
 	background-color: @nav-top;
+	position: fixed;
+	z-index: 500;
 
 	a {
 		color: @nav-top;
@@ -142,6 +144,7 @@ h1 {
 	text-align: center;
 	width: 70%;
 	margin: 0 auto;
+	margin-top: 85px;
 
 	h1{
 		width: 100%;
@@ -809,13 +812,16 @@ figure.effect-lexi:hover p {
 }
 
 .modalcarrinho {
-	width: 100%;
+	width: 41%;
 	height:auto;
-	min-height: 200px;
-	background-color: green;
+	min-height: 400px;
+	background-color: @bg-color;
 	position:absolute;
 	z-index:1005;
 	display: none;
+	position: fixed;
+	top: 66.19px;
+	left: 59%;
 }
 
 .modalsearch {
@@ -829,6 +835,7 @@ figure.effect-lexi:hover p {
 	left: 59%;
 	top: 66.19px;
 	display: none;
+	position: fixed;
 }
 
 .container {
@@ -855,10 +862,14 @@ figure.effect-lexi:hover p {
 	width: 100%;
 	overflow-x: hidden;
 }
+
 .well {
 	margin-right: 50px;
-	width: 100%;
+	width: 93%;
+	height: 150px;
 	border-radius: 5px;
+	background-color: @azul-escuro;
+	border: 0;
 }
 
 .searchOut {
@@ -871,4 +882,41 @@ figure.effect-lexi:hover p {
 
 .form-group {
     margin-bottom: 0;
+}
+
+.col-md-3{
+		margin-top: 5px;
+}
+
+.col-md-7{
+	h5{
+		font-size: 20px;
+		margin: 0;
+		margin-top: 5px;
+		color: white;
+	}
+	p{
+		margin: 0;
+		margin-top: 20px;
+		color: white;
+	}
+}
+
+.counter{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #D78977;
+	position: absolute;
+	z-index: 501;
+	top: 52%;
+	left: 98.2%;
+	text-align: center;
+	p{
+		margin: 0;
+		font-size: 12px;
+		font-weight: 700;
+		vertical-align: middle;
+		margin-right: 1px;
+	}
 }

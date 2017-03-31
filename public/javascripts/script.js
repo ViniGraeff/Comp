@@ -1,4 +1,5 @@
 var servidor="http://localhost:3250/db/json";
+var servidor2="http://localhost:3250/produto?codigo=";
 var micro=0, sensores=0, displays=0, componentes=0, cabos=0, motores=0, embarcados=0;
 
 $(document).ready(function () {
@@ -40,7 +41,7 @@ $(document).ready(function () {
 	
 	$('#cart').click(function(){
 		$('.modalcarrinho').fadeIn();
-		$('.modalsearch').hide();
+		$('.modalsearch').fadeOut();
 	});
 
 	$('#botFechar').click(function(){
@@ -49,6 +50,7 @@ $(document).ready(function () {
 
 	$('#search').click(function(){
 		$('.modalsearch').fadeToggle();
+		$('.modalcarrinho').fadeOut();
 	});
 
 	$('#todos').click(function(){
@@ -141,7 +143,7 @@ function print(){
 		if(micro==0){
 				for (var i = 0; i < data.PIC.length; i++){
 						// $('#table').append('<tr><td>'+text[i].id+'</td><td>'+text[i].nome+'</td><td>'+'R$ '+str+'</td><td>'+'<img src="img/happybatman.jpg" alt= "Batman Feliz" style="width:40px;height:40px; border-radius:50%;";>'+'</td><td>'+text[i].estoque+'</td><td>'+'<button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="modal" data-target="#abrir" onclick="preencher('+i+')"></span></button>'+'</td><td>'+'<button type="button" class="btn btn-default btn-sm" onclick="deleta('+aux+')" data-toggle="modal" data-target="#abrir"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>'+'</td></tr>');
-						$('#print').append('<div class="col-md-3"><div class="inicial2" data-toggle="tooltip" title="'+data.PIC[i].nome+'""><h3>'+data.PIC[i].nome+'</h3><div class="grid"><figure class="effect-lexi"><a href="#"><img src="../img/'+data.PIC[i].código+'.jpg"></a><figcaption><p><a href="#"><i class="fa fa-fw fa-user"></i></a><a href="#"><i class="fa fa-fw fa-heart"></i></a><a href="#"><i class="fa fa-fw fa-cog"></i></a></p></figcaption></figure></div><h4>R$ '+data.PIC[i].valor+'</h4></div></div>');
+						$('#print').append('<a href="'+servidor2+data.PIC[i].código'"><div class="col-md-3"><div class="inicial2" data-toggle="tooltip" title="'+data.PIC[i].nome+'""><h3>'+data.PIC[i].nome+'</h3><div class="grid"><figure class="effect-lexi"><a href="#"><img src="../img/'+data.PIC[i].código+'.jpg"></a><figcaption><p><a href="#"><i class="fa fa-fw fa-user"></i></a><a href="#"><i class="fa fa-fw fa-heart"></i></a><a href="#"><i class="fa fa-fw fa-cog"></i></a></p></figcaption></figure></div><h4>R$ '+data.PIC[i].valor+'</h4></div></div></a>');
 				}
 		}
 
@@ -211,7 +213,7 @@ $.get(servidor, function(data) {
 				output += '<div class="col-md-3"><div class="imgsearch"><img src="../img/'+dados[x].código+'.jpg" alt="'+ nomes +'" /></div></div>';
 				output += '<div class="col-md-7">';
 				output += '<h5>' + nomes + '</h5>';
-				output += '<p>' + dados[x].valor + '</p>'
+				output += '<p>R$ ' + dados[x].valor + '</p>'
 				output += '</div>';
 				output += '</div>';
 				if(count%2 == 0){

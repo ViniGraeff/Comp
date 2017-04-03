@@ -6,7 +6,7 @@ var fs = require('fs');
 router.get('/', function(req, res, next) {
 	fs.readFile(__dirname+ '/../db/produtos.json', 'utf8', function(err, data){
 		data = JSON.parse(data);
-		res.render('catalogo', { dados: data });
+		res.render('produtos', { dados: data });
 		res.end();
 	});
 });

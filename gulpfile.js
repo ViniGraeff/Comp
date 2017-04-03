@@ -7,13 +7,13 @@ var nodemon = require('nodemon');
 
 gulp.task('uri', function(){
   gulp.src(__filename)
-  .pipe(open({uri: 'http://localhost:3250'}));
+  .pipe(open({uri: 'http://localhost:45200'}));
 });
 
 
 gulp.task('start', function () {
   nodemon({
-    src: 'localhost:3250'
+    src: 'localhost:45200'
   , ext: 'js html css less'
   , env: { 'NODE_ENV': 'development' }
   })

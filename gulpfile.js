@@ -4,16 +4,17 @@ var path = require('path');
 var open = require('gulp-open');
 var watch = require('gulp-watch');
 var nodemon = require('nodemon');
+var port = "45300";
 
 gulp.task('uri', function(){
   gulp.src(__filename)
-  .pipe(open({uri: 'http://localhost:45200'}));
+  .pipe(open({uri: 'http://localhost:'+port}));
 });
 
 
 gulp.task('start', function () {
   nodemon({
-    src: 'localhost:45200'
+    src: 'localhost:'+port
   , ext: 'js html css less'
   , env: { 'NODE_ENV': 'development' }
   })

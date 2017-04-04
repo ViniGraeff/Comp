@@ -4,7 +4,7 @@ var path = require('path');
 var open = require('gulp-open');
 var watch = require('gulp-watch');
 var nodemon = require('nodemon');
-var port = "45300";
+var port = "3481";
 
 gulp.task('uri', function(){
   gulp.src(__filename)

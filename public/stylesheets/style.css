@@ -45,6 +45,10 @@ html {
 h1 {
   margin: 0;
 }
+a {
+  margin: 0;
+  padding: 0;
+}
 /*-------------------------------*/
 /*            Top-Nav            */
 /*-------------------------------*/
@@ -59,7 +63,7 @@ h1 {
   color: #333;
 }
 .nav-top a:hover {
-  color: #f5f5f5;
+  color: white;
 }
 .cart {
   display: block;
@@ -72,7 +76,7 @@ h1 {
   cursor: pointer;
 }
 .cart:hover {
-  color: #f5f5f5;
+  color: white;
 }
 .titulo {
   text-align: center;
@@ -388,7 +392,7 @@ h1 {
   min-height: 545px;
   overflow: hidden;
   margin: 30px auto;
-  background-color: #f5f5f5;
+  background-color: white;
   color: #007fff;
 }
 .conteudo .col-md-4 {
@@ -761,7 +765,7 @@ figure.effect-lexi:hover p {
   min-height: 545px;
   overflow: hidden;
   margin: 132.38px auto;
-  background-color: #f5f5f5;
+  background-color: white;
   color: #007fff;
 }
 .conteudoProduto .col-md-4 {
@@ -775,4 +779,27 @@ figure.effect-lexi:hover p {
   padding-top: 30px;
   font-family: 'Aldrich', sans-serif;
   padding-bottom: 15px;
+}
+.containerProduto {
+  width: 80%;
+  height: 50%;
+  margin-top: 15px;
+}
+.containerProduto img {
+  width: 100%;
+  height: 100%;
+}
+.containerNome {
+  color: #34495e;
+  margin-top: 15px;
+}
+.botao {
+  width: 100px;
+  height: 40px;
+  background-color: #007fff;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  line-height: 40px;
+  text-align: center;
 }

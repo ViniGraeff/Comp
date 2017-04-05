@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/catalogo', catalogo);
 app.use('/db/json', json);
-app.use('/catalogo/produto/', produto);
+app.use('/produto/detalhado/', produto);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

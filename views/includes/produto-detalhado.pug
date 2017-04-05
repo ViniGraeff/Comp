@@ -1,69 +1,25 @@
 .conteudoProduto
-	input(type='hidden', value=id)
 	div.row
-		div.col-md-6
-			div.containerProduto
-				if id<9
-					img(src="../../img/"+dados.PIC[id].codigo+".jpg")
-				else if id<25
-					- var id2 = id - 9
-					img(src="../../img/"+dados.SENSORES[id2].codigo+".jpg")
-				else if id<32
-					- var id2 = id - 25
-					img(src="../../img/"+dados.COMPONENTES[id2].codigo+".jpg")
-				else if id<42
-					- var id2 = id - 32
-					img(src="../../img/"+dados.DISPLAYS[id2].codigo+".jpg")
-				else if id<51
-					- var id2 = id - 42
-					img(src="../../img/"+dados.CABOS[id2].codigo+".jpg")
-				else if id<60
-					- var id2 = id - 51
-					img(src="../../img/"+dados.MOTORES[id2].codigo+".jpg")
-				else if id<67
-					- var id2 = id - 60
-					img(src="../../img/"+dados.EMBARCADOS[id2].codigo+".jpg")
-		div.col-md-6
-			div.containerNome
-				if id<9
-					h3 #{dados.PIC[id].nome}
-				else if id<25
-					- var id2 = id - 9
-					h3 #{dados.SENSORES[id2].nome}
-				else if id<32
-					- var id2 = id - 25
-					h3 #{dados.COMPONENTES[id2].nome}
-				else if id<42
-					- var id2 = id - 32
-					h3 #{dados.DISPLAYS[id2].nome}
-				else if id<51
-					- var id2 = id - 42
-					h3 #{dados.CABOS[id2].nome}
-				else if id<60
-					- var id2 = id - 51
-					h3 #{dados.MOTORES[id2].nome}
-				else if id<67
-					- var id2 = id - 60
-					h3 #{dados.EMBARCADOS[id2].nome}
-			div.containerPreco
-				if id<9
-					h5 R$ #{dados.PIC[id].valor}
-				else if id<25
-					- var id2 = id - 9
-					h5 R$ #{dados.SENSORES[id2].valor}
-				else if id<32
-					- var id2 = id - 25
-					h5 R$ #{dados.COMPONENTES[id2].valor}
-				else if id<42
-					- var id2 = id - 32
-					h5 R$ #{dados.DISPLAYS[id2].valor}
-				else if id<51
-					- var id2 = id - 42
-					h5 R$ #{dados.CABOS[id2].valor}
-				else if id<60
-					- var id2 = id - 51
-					h5 R$ #{dados.MOTORES[id2].valor}
-				else if id<67
-					- var id2 = id - 60
-					h5 R$ #{dados.EMBARCADOS[id2].valor}
-			div.botao Comprar
+		div.col-md-4
+			div.containerProduto.z-depth-2
+				img#zoom_05(src="../../../img/"+prod[0].tipo+'/'+prod[0].codigo+".jpg")
+		div.col-md-8
+			.row
+				div.col-md-11
+					div.containerNome
+						h3 #{prod[0].nome}
+				div.col-md-3
+			.row
+				div.col-md-4
+					div.containerPreco
+						h5 R$ #{prod[0].valor}
+				div.col-md-8
+			.row
+				div.col-md-4
+					div.botaoCompra.z-depth-4 Comprar
+				div.col-md-6
+					div.botaoCarrinho.z-depth-4 Adicionar ao Carrinho
+			.row
+				div.col-md-10
+					div.descricao
+						p #{prod[0].descricao}

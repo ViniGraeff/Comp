@@ -762,7 +762,7 @@ figure.effect-lexi:hover p {
 .conteudoProduto {
   width: 80%;
   height: auto;
-  min-height: 545px;
+  min-height: 413px;
   overflow: hidden;
   margin: 132.38px auto;
   background-color: white;
@@ -781,9 +781,9 @@ figure.effect-lexi:hover p {
   padding-bottom: 15px;
 }
 .containerProduto {
-  width: 80%;
+  width: 100%;
   height: 50%;
-  margin-top: 15px;
+  margin-top: 50px;
 }
 .containerProduto img {
   width: 100%;
@@ -791,10 +791,29 @@ figure.effect-lexi:hover p {
 }
 .containerNome {
   color: #34495e;
-  margin-top: 15px;
+  margin-top: 50px;
+  margin-left: 15px;
 }
-.botao {
-  width: 100px;
+.containerPreco {
+  margin-left: 15px;
+}
+.botaoCompra {
+  min-width: 100px;
+  width: auto;
+  height: 40px;
+  background-color: #66b2ff;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  line-height: 40px;
+  text-align: center;
+}
+.botaoCompra:hover {
+  background-color: #4da5ff;
+}
+.botaoCarrinho {
+  min-width: 100px;
+  width: auto;
   height: 40px;
   background-color: #007fff;
   border-radius: 5px;
@@ -802,4 +821,12 @@ figure.effect-lexi:hover p {
   color: white;
   line-height: 40px;
   text-align: center;
+}
+.botaoCarrinho:hover {
+  background-color: #0072e6;
+}
+.descricao {
+  margin-left: 15px;
+  margin-top: 15px;
+  text-align: justify;
 }

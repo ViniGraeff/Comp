@@ -1,8 +1,16 @@
-var port='1300';
+var port='1301';
 var app = {
 	db:'http://localhost:'+port+'/db/json',
 	prodDetail:'http://localhost:'+port+'/produto/detalhado/'
 }
+produto = new Array (7);
+produto[0]=0;
+produto[1]=0;
+produto[2]=0;
+produto[3]=0;
+produto[4]=0;
+produto[5]=0;
+produto[6]=0;
 
 
 $(document).ready(function () {
@@ -59,83 +67,83 @@ $(document).ready(function () {
 	});
 
 	$('#todos').click(function(){
-		micro=0;
-		sensores=0;
-		displays=0;
-		componentes=0;
-		cabos=0;
-		motores=0;
-		embarcados=0;
+		produto[0]=0;
+		produto[1]=0;
+		produto[2]=0;
+		produto[3]=0;
+		produto[4]=0;
+		produto[5]=0;
+		produto[6]=0;
 		print();
 	});
 	$('#micro').click(function(){
-		micro=0;
-		sensores=1;
-		displays=1;
-		componentes=1;
-		cabos=1;
-		motores=1;
-		embarcados=1;
+		produto[0]=0;
+		produto[1]=1;
+		produto[2]=1;
+		produto[3]=1;
+		produto[4]=1;
+		produto[5]=1;
+		produto[6]=1;
 		print();
 	});
 	$('#sensores').click(function(){
-		micro=1;
-		sensores=0;
-		displays=1;
-		componentes=1;
-		cabos=1;
-		motores=1;
-		embarcados=1;
-		print();
-	});
-	$('#displays').click(function(){
-		micro=1;
-		sensores=1;
-		displays=0;
-		componentes=1;
-		cabos=1;
-		motores=1;
-		embarcados=1;
+		produto[0]=1;
+		produto[1]=0;
+		produto[2]=1;
+		produto[3]=1;
+		produto[4]=1;
+		produto[5]=1;
+		produto[6]=1;
 		print();
 	});
 	$('#componentes').click(function(){
-		micro=1;
-		sensores=1;
-		displays=1;
-		componentes=0;
-		cabos=1;
-		motores=1;
-		embarcados=1;
+		produto[0]=1;
+		produto[1]=1;
+		produto[2]=0;
+		produto[3]=1;
+		produto[4]=1;
+		produto[5]=1;
+		produto[6]=1;
+		print();
+	});
+	$('#displays').click(function(){
+		produto[0]=1;
+		produto[1]=1;
+		produto[2]=1;
+		produto[3]=0;
+		produto[4]=1;
+		produto[5]=1;
+		produto[6]=1;
 		print();
 	});
 	$('#cabos').click(function(){
-		micro=1;
-		sensores=1;
-		displays=1;
-		componentes=1;
-		cabos=0;
-		motores=1;
-		embarcados=1;
+		produto[0]=1;
+		produto[1]=1;
+		produto[2]=1;
+		produto[3]=1;
+		produto[4]=0;
+		produto[5]=1;
+		produto[6]=1;
 		print();
 	});
 	$('#motores').click(function(){
-		micro=1;
-		sensores=1;
-		displays=1;
-		componentes=1;
-		cabos=1;
-		motores=0;
-		embarcados=1;
+		produto[0]=1;
+		produto[1]=1;
+		produto[2]=1;
+		produto[3]=1;
+		produto[4]=1;
+		produto[5]=0;
+		produto[6]=1;
 		print();
 	});
 	$('#embarcados').click(function(){
-		micro=1;
-		sensores=1;
-		displays=1;
-		componentes=1;
-		cabos=1;
-		motores=1;
-		embarcados=0;
+		produto[0]=1;
+		produto[1]=1;
+		produto[2]=1;
+		produto[3]=1;
+		produto[4]=1;
+		produto[5]=1;
+		produto[6]=0;
 		print();
 	});
 
@@ -158,8 +166,10 @@ $(document).ready(function () {
 		$('#print').empty();
 		$.get(app.db, function(data){
 			for(var i=0; i<data.produtos.length; i++){
-				for(var x=0; x<data.produtos[i].length; x++){
-					$('#print').append('<a href="'+app.prodDetail+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'"><div id="'+data.produtos[i][x].codigo+'" class="col-md-3"><div class="inicial2" data-toggle="tooltip" title="'+data.produtos[i][x].nome+'""><h3>'+data.produtos[i][x].nome+'</h3><div class="grid"><figure class="effect-lexi"><img src="../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg"><figcaption><p><a href="#"><i class="fa fa-fw fa-user"></i></a><a href="#"><i class="fa fa-fw fa-heart"></i></a><a href="#"><i class="fa fa-fw fa-cog"></i></a></p></figcaption></figure></div><h4>R$ '+data.produtos[i][x].valor+'</h4></div></div></a>');
+				if(produto[i] == 0){
+					for(var x=0; x<data.produtos[i].length; x++){
+						$('#print').append('<div id="'+data.produtos[i][x].codigo+'" class="col-md-3"><div class="inicial2" data-toggle="tooltip" title="'+data.produtos[i][x].nome+'""><a href="'+app.prodDetail+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'"><h3>'+data.produtos[i][x].nome+'</h3></a><div class="grid"><figure class="effect-lexi"><img src="../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg"><figcaption><p><a href="#"><i class="fa fa-fw fa-user"></i></a><a href="#"><i class="fa fa-fw fa-heart"></i></a><a href="#"><i class="fa fa-fw fa-cog"></i></a></p></figcaption></figure></div><h4>R$ '+data.produtos[i][x].valor+'</h4></div></div>');
+					}
 				}
 			}
 		});
@@ -189,7 +199,7 @@ $.get(app.db, function(data) {
 				console.log(data.produtos[i][x].nome);
 				if(data.produtos[i][x].nome.search(regex) != -1){
 				output += '<div class="col-md-12 well">';
-				output += '<div class="col-md-3"><div class="imgsearch"><img src="../../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg" alt="'+ data.produtos[i][x].nome +'" /></div></div>';
+				output += '<div class="col-md-3"><div class="imgsearch"><img src="../../../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg" alt="'+ data.produtos[i][x].nome +'" /></div></div>';
 				output += '<div class="col-md-7">';
 				output += '<h5>' + data.produtos[i][x].nome + '</h5>';
 				output += '<p>R$ ' + data.produtos[i][x].valor + '</p>'

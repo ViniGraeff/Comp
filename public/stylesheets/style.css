@@ -801,7 +801,7 @@ figure.effect-lexi:hover p {
   min-width: 100px;
   width: auto;
   height: 40px;
-  background-color: #66b2ff;
+  background-color: #4da5ff;
   border-radius: 5px;
   cursor: pointer;
   color: white;
@@ -809,7 +809,7 @@ figure.effect-lexi:hover p {
   text-align: center;
 }
 .botaoCompra:hover {
-  background-color: #4da5ff;
+  background-color: #3399ff;
 }
 .botaoCarrinho {
   min-width: 100px;

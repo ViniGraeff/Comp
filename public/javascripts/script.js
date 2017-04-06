@@ -1,8 +1,11 @@
-var port='1301';
+var port='1302';
 var app = {
 	db:'http://localhost:'+port+'/db/json',
 	prodDetail:'http://localhost:'+port+'/produto/detalhado/'
 }
+
+var dataId;
+
 produto = new Array (7);
 produto[0]=0;
 produto[1]=0;
@@ -55,6 +58,11 @@ $(document).ready(function () {
 	$('#cart').click(function(){
 		$('.modalcarrinho').fadeIn();
 		$('.modalsearch').fadeOut();
+	});
+
+	$('#botCarrinho').click(function(){
+		dataId = $(this).data("id");
+		console.log(dataId);
 	});
 
 	$('#botFechar').click(function(){

@@ -1,4 +1,4 @@
-var port='1302';
+var port='1470';
 var app = {
 	db:'http://localhost:'+port+'/db/json',
 	prodDetail:'http://localhost:'+port+'/produto/detalhado/'
@@ -62,7 +62,9 @@ $(document).ready(function () {
 
 	$('#botCarrinho').click(function(){
 		dataId = $(this).data("id");
-		console.log(dataId);
+		dataTipo = $(this).data("tipo");
+		carrinho();
+		console.log(dataId, dataTipo);
 	});
 
 	$('#botFechar').click(function(){
@@ -224,3 +226,11 @@ $.get(app.db, function(data) {
 		$('#filter-records').html(output);
 	});
 });
+
+function carrinho(){
+	$.ajax({
+			type: 'GET',
+			dataType: 'json',
+			url: app.prodDetail+dataId
+		});
+}

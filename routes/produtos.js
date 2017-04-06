@@ -36,5 +36,29 @@ router.get('/:categoria/:id', function(req, res, next) {
 	});
 	
 });
+router.get('/:id', function(req, res, next) {
+	fs.readFile(__dirname+ '/../db/produtos.json', 'utf8', function(err, data){
+		data = JSON.parse(data);
+		var id = req.params.id;
+		var cat = 0;
+		var prod = 0;
+		for(var i=0; i<data.produtos.length; i++){
+			for(var x=0; x<data.produtos[i].length; x++){
+				if(data.produtos[i][x].codigo==req.params.id){
+					cat = i;
+					prod = x;
+				}
+			}
+		}
+		var item = data.produtos[cat][prod];
+		item.carrinho = 1;
+
+		console.log(prod);
+		data.produtos[cat].splice(prod, 1);
+
+		console.log(item);
+		
+	});
+});	
 
 module.exports = router;

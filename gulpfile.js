@@ -55,4 +55,6 @@ gulp.task('less', function () {
 });
 
 
-gulp.task('default', ['start', 'bower', 'less', 'uri']);
+gulp.task('default', ['start', 'bower', 'less', 'uri'], function(){
+	gulp.watch("./less/**/*.less", ['less']);
+});

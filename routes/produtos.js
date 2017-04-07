@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
+var file = require('./../controller/file');
 
 /* GET users listing. */
 router.get('/:categoria/:id', function(req, res, next) {
@@ -56,7 +57,11 @@ router.get('/:id', function(req, res, next) {
 		console.log(prod);
 		data.produtos[cat].splice(prod, 1);
 
+		data.produtos[cat].push(item);
+		var dataJson = JSON.stringify(data);
+		file.write(dataJson, res);
 		console.log(item);
+
 		
 	});
 });	

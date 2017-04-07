@@ -185,6 +185,19 @@ $(document).ready(function () {
 		});
 	}
 
+	// function printCarrinho(){
+	// 	$('#appendCarrinho').empty();
+	// 	$.get(app.db, function(data){
+	// 		for(var i=0; i<data.produtos.length; i++){
+	// 			for(var x=0; x<data.produtos[i].length; x++){
+	// 				if(data.produtos[i][x].carrinho==1){
+	// 					$('#appendCarrinho').append('');
+	// 				}
+	// 			}
+	// 		}
+	// 	});
+	// }
+
 $("#zoom_05").elevateZoom({
   zoomType: "inner",
   cursor: "crosshair"

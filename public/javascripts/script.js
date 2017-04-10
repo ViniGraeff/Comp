@@ -1,4 +1,4 @@
-var port='1470';
+var port='1490';
 var app = {
 	db:'http://localhost:'+port+'/db/json',
 	prodDetail:'http://localhost:'+port+'/produto/detalhado/'
@@ -56,8 +56,9 @@ $(document).ready(function () {
 	});
 	
 	$('#cart').click(function(){
-		$('.modalcarrinho').fadeIn();
+		$('.modalcarrinho').fadeToggle();
 		$('.modalsearch').fadeOut();
+		printCarrinho();
 	});
 
 	$('#botCarrinho').click(function(){
@@ -65,6 +66,14 @@ $(document).ready(function () {
 		dataTipo = $(this).data("tipo");
 		carrinho();
 		console.log(dataId, dataTipo);
+	});
+
+	$('#appendCarrinho').on('click', '.close', function(){
+		console.log('entrei no fechar');
+		var dataFechar = $(this).data("fechar");
+		console.log(dataFechar);
+		carrinhoExcluir(dataFechar);
+		// printCarrinho(); botar no callback do carrinho excluir
 	});
 
 	$('#botFechar').click(function(){
@@ -185,18 +194,19 @@ $(document).ready(function () {
 		});
 	}
 
-	// function printCarrinho(){
-	// 	$('#appendCarrinho').empty();
-	// 	$.get(app.db, function(data){
-	// 		for(var i=0; i<data.produtos.length; i++){
-	// 			for(var x=0; x<data.produtos[i].length; x++){
-	// 				if(data.produtos[i][x].carrinho==1){
-	// 					$('#appendCarrinho').append('');
-	// 				}
-	// 			}
-	// 		}
-	// 	});
-	// }
+	function printCarrinho(){
+		$('#appendCarrinho').empty();
+		$.get(app.db, function(data){
+			for(var i=0; i<data.produtos.length; i++){
+				for(var x=0; x<data.produtos[i].length; x++){
+					if(data.produtos[i][x].carrinho==1){
+						$('#appendCarrinho').append('<div class="linha"<div class="row"><div class="col-md-4"><div class="imgCarrinho"><img src="../../../../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg"></div></div><div class="col-md-8"><button type="button" class="close" data-fechar='+data.produtos[i][x].codigo+' id="botFechar'+data.produtos[i][x].codigo+'">&times;</button><div class="separa"><p>'+data.produtos[i][x].nome+'</p></div><div class="row"><div class="col-md-2"><div class="input-field"><input placeholder="" type="text" class="validate"></div></div><div class="col-md-10"><p> Quantidade</p></div></div><p> Valor unitário: R$ '+data.produtos[i][x].valor+' / Valor total: X</p></div></div><div class="divider"</div></div>');
+					// console.log("botFechar"+data.produtos[i][x].codigo);
+					}
+				}
+			}
+		});
+	}
 
 $("#zoom_05").elevateZoom({
   zoomType: "inner",
@@ -242,8 +252,22 @@ $.get(app.db, function(data) {
 
 function carrinho(){
 	$.ajax({
-			type: 'GET',
-			dataType: 'json',
-			url: app.prodDetail+dataId
-		});
+		type: 'GET',
+		dataType: 'json',
+		url: app.prodDetail+dataId
+	});
+}
+function carrinhoExcluir(id){
+	console.log(id);
+	$.ajax({
+		type: 'GET',
+		dataType: 'json',
+		url: app.prodDetail+'excluir/'+id,
+		success: function(result){
+        	console.log('ok');
+    	},
+    	error: function(status){
+    		console.log(status);
+    	}
+	});
 }

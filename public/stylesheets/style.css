@@ -833,6 +833,11 @@ figure.effect-lexi:hover p {
 .linha {
   width: 100%;
   height: 150px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.linha p {
+  font-size: 15px;
 }
 .linha .imgCarrinho {
   width: 80%;
@@ -841,4 +846,35 @@ figure.effect-lexi:hover p {
   width: 100%;
   border-radius: 3px;
   margin: 10px;
+}
+.linha .col-md-8 {
+  margin-top: 10px;
+}
+.linha .col-md-8 p {
+  margin: 0;
+  padding: 0;
+}
+.linha .col-md-8 .separa p {
+  margin-bottom: 20px;
+}
+.linha .col-md-8 .input-field .validate {
+  width: 40px;
+  margin-bottom: 20px;
+}
+.linha .col-md-8 .col-md-10 {
+  margin: 0;
+  padding: 0;
+}
+.linha .col-md-8 .col-md-10 p {
+  margin-top: 4px;
+}
+.divider {
+  height: 1px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+}
+#appendCarrinho {
+  max-height: 384px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }

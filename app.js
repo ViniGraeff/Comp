@@ -10,6 +10,7 @@ var index = require('./routes/index');
 var catalogo = require('./routes/users');
 var json = require('./routes/json');
 var produto = require('./routes/produtos');
+var excluir = require('./routes/excluir');
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use('/', index);
 app.use('/catalogo', catalogo);
 app.use('/db/json', json);
 app.use('/produto/detalhado/', produto);
+app.use('/produto/detalhado/excluir/', excluir);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

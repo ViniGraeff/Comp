@@ -1,7 +1,8 @@
-var port='1490';
+var port='1700';
 var app = {
 	db:'http://localhost:'+port+'/db/json',
-	prodDetail:'http://localhost:'+port+'/produto/detalhado/'
+	prodDetail:'http://localhost:'+port+'/produto/detalhado/',
+	prodExcluir:'http://localhost:'+port+'/produto/excluir/'
 }
 
 var dataId;
@@ -65,15 +66,17 @@ $(document).ready(function () {
 		dataId = $(this).data("id");
 		dataTipo = $(this).data("tipo");
 		carrinho();
-		console.log(dataId, dataTipo);
+	});
+
+	$('#print').on('click', "#botCarrinho", function(){
+		dataId = $(this).data("id");
+		dataTipo = $(this).data("tipo");
+		carrinho();
 	});
 
 	$('#appendCarrinho').on('click', '.close', function(){
-		console.log('entrei no fechar');
 		var dataFechar = $(this).data("fechar");
-		console.log(dataFechar);
-		carrinhoExcluir(dataFechar);
-		// printCarrinho(); botar no callback do carrinho excluir
+		carrinhoExcluir(dataFechar, $(this));
 	});
 
 	$('#botFechar').click(function(){
@@ -187,7 +190,7 @@ $(document).ready(function () {
 			for(var i=0; i<data.produtos.length; i++){
 				if(produto[i] == 0){
 					for(var x=0; x<data.produtos[i].length; x++){
-						$('#print').append('<div id="'+data.produtos[i][x].codigo+'" class="col-md-3"><div class="inicial2" data-toggle="tooltip" title="'+data.produtos[i][x].nome+'""><a href="'+app.prodDetail+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'"><h3>'+data.produtos[i][x].nome+'</h3></a><div class="grid"><figure class="effect-lexi"><img src="../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg"><figcaption><p><a href="#"><i class="fa fa-fw fa-user"></i></a><a href="#"><i class="fa fa-fw fa-heart"></i></a><a href="#"><i class="fa fa-fw fa-cog"></i></a></p></figcaption></figure></div><h4>R$ '+data.produtos[i][x].valor+'</h4></div></div>');
+						$('#print').append('<div id="'+data.produtos[i][x].codigo+'" class="col-md-3"><div class="inicial2" data-toggle="tooltip" title="'+data.produtos[i][x].nome+'""><a href="'+app.prodDetail+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'"><h3>'+data.produtos[i][x].nome+'</h3></a><div class="grid"><figure class="effect-lexi"><img src="../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg"><figcaption><p><a><i id="botCarrinho" data-id='+data.produtos[i][x].codigo+' data-tipo='+data.produtos[i][x].tipo+' class="fa fa-fw fa-cart-plus fa-lg"></i></a><a href=""><i class="fa fa-fw fa-heart"></i></a><a href=""><i class="fa fa-fw fa-usd"></i></a></p></figcaption></figure></div><h4>R$ '+data.produtos[i][x].valor+'</h4></div></div>');
 					}
 				}
 			}
@@ -201,7 +204,6 @@ $(document).ready(function () {
 				for(var x=0; x<data.produtos[i].length; x++){
 					if(data.produtos[i][x].carrinho==1){
 						$('#appendCarrinho').append('<div class="linha"<div class="row"><div class="col-md-4"><div class="imgCarrinho"><img src="../../../../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg"></div></div><div class="col-md-8"><button type="button" class="close" data-fechar='+data.produtos[i][x].codigo+' id="botFechar'+data.produtos[i][x].codigo+'">&times;</button><div class="separa"><p>'+data.produtos[i][x].nome+'</p></div><div class="row"><div class="col-md-2"><div class="input-field"><input placeholder="" type="text" class="validate"></div></div><div class="col-md-10"><p> Quantidade</p></div></div><p> Valor unitário: R$ '+data.produtos[i][x].valor+' / Valor total: X</p></div></div><div class="divider"</div></div>');
-					// console.log("botFechar"+data.produtos[i][x].codigo);
 					}
 				}
 			}
@@ -254,17 +256,26 @@ function carrinho(){
 	$.ajax({
 		type: 'GET',
 		dataType: 'json',
-		url: app.prodDetail+dataId
+		url: app.prodDetail+dataId,
+		success: function(result){
+        	console.log('Produto adicionado com sucesso!');
+
+    	},
+    	error: function(status){
+    		console.log(status);
+    	}
 	});
 }
-function carrinhoExcluir(id){
-	console.log(id);
+function carrinhoExcluir(id, elem){
 	$.ajax({
 		type: 'GET',
 		dataType: 'json',
-		url: app.prodDetail+'excluir/'+id,
+		url: app.prodExcluir+id,
 		success: function(result){
-        	console.log('ok');
+        	$(elem).parents('.linha').slideUp('slow', function(){
+        		$(elem).parents('.linha').remove();
+        		console.log('Produto excluido com sucesso!');
+        	});
     	},
     	error: function(status){
     		console.log(status);

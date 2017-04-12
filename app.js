@@ -30,7 +30,7 @@ app.use('/', index);
 app.use('/catalogo', catalogo);
 app.use('/db/json', json);
 app.use('/produto/detalhado/', produto);
-app.use('/produto/detalhado/excluir/', excluir);
+app.use('/produto/excluir/', excluir);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

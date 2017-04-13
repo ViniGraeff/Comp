@@ -170,6 +170,10 @@ $(document).ready(function () {
 		print();
 	});
 
+	$('#appendCarrinho').on('input', '.num', function(event){
+		this.value = this.value.replace(/[^0-9]/g, '');
+	});
+
 	var getUrlParameter = function getUrlParameter(sParam) {
 		var sPageURL = decodeURIComponent(window.location.search.substring(1)),
 			sURLVariables = sPageURL.split('&'),
@@ -204,7 +208,7 @@ $(document).ready(function () {
 			for(var i=0; i<data.produtos.length; i++){
 				for(var x=0; x<data.produtos[i].length; x++){
 					if(data.produtos[i][x].carrinho==1){
-						$('#appendCarrinho').append('<div class="linha"<div class="row"><div class="col-md-4"><div class="imgCarrinho"><img src="../../../../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg"></div></div><div class="col-md-8"><button type="button" class="close" data-fechar='+data.produtos[i][x].codigo+' id="botFechar'+data.produtos[i][x].codigo+'">&times;</button><div class="separa"><p>'+data.produtos[i][x].nome+'</p></div><div class="row"><div class="col-md-2"><div class="input-field"><input placeholder="" type="text" class="validate"></div></div><div class="col-md-10"><p> Quantidade</p></div></div><p> Valor unitário: R$ '+data.produtos[i][x].valor+' / Valor total: X</p></div></div><div class="divider"</div></div>');
+						$('#appendCarrinho').append('<div class="linha"<div class="row"><div class="col-md-4"><div class="imgCarrinho"><img src="../../../../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg"></div></div><div class="col-md-8"><button type="button" class="close" data-fechar='+data.produtos[i][x].codigo+' id="botFechar'+data.produtos[i][x].codigo+'">&times;</button><div class="separa"><p>'+data.produtos[i][x].nome+'</p></div><div class="row"><div class="col-md-2"><div class="input-field"><input placeholder="" type="text" class="validate num"></div></div><div class="col-md-10"><p> Quantidade</p></div></div><p> Valor unitário: R$ '+data.produtos[i][x].valor+' / Valor total: X</p></div></div><div class="divider"</div></div>');
 					}
 				}
 			}

@@ -878,3 +878,8 @@ figure.effect-lexi:hover p {
   overflow-y: auto;
   overflow-x: hidden;
 }
+.vazio h2 {
+  font-size: 41px;
+  margin-top: 52px;
+  margin-left: 20px;
+}

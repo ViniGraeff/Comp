@@ -6,6 +6,7 @@ var app = {
 }
 
 var dataId;
+var quantidade = 0;
 
 produto = new Array (7);
 produto[0]=0;
@@ -212,6 +213,9 @@ $(document).ready(function () {
 					}
 				}
 			}
+		if(quantidade==0){
+			$('#appendCarrinho').append('<div class="vazio"><h2>Não há produtos no carrinho</h2></div>');
+		}
 		});
 	}
 
@@ -224,19 +228,17 @@ $("#zoom_05").elevateZoom({
 
 
 function conta(){
-	var quantidade = 0;
+	quantidade=0;
 	$('#contador').empty();
 	$.get(app.db, function(data){
 		for(var i=0; i<data.produtos.length; i++){
 			for(var x=0; x<data.produtos[i].length; x++){
 				if(data.produtos[i][x].carrinho==1){
 					quantidade=quantidade+1;
-					console.log('quantidade');
 				}
 			}
 		}
 	$('#contador').append('<p>'+quantidade+'</p>');
-	console.log(quantidade);
 	});
 }
 
@@ -256,13 +258,13 @@ $.get(app.db, function(data) {
 			for(x in data.produtos[i]){
 				console.log(data.produtos[i][x].nome);
 				if(data.produtos[i][x].nome.search(regex) != -1){
-				output += '<div class="col-md-12 well">';
+				output += '<a href="'+app.prodDetail+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'"><div class="col-md-12 well">';
 				output += '<div class="col-md-3"><div class="imgsearch"><img src="../../../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg" alt="'+ data.produtos[i][x].nome +'" /></div></div>';
 				output += '<div class="col-md-7">';
 				output += '<h5>' + data.produtos[i][x].nome + '</h5>';
 				output += '<p>R$ ' + data.produtos[i][x].valor + '</p>'
 				output += '</div>';
-				output += '</div>';
+				output += '</div></a>';
 				if(count%2 == 0){
 					output += '</div><div class="row">'
 				}

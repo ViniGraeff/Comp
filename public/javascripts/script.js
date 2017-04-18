@@ -148,43 +148,55 @@ function subCount(id){
 	});
 }
 
+var getUrlParameter = function getUrlParameter(sParam) {
+	var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+		sURLVariables = sPageURL.split('&'),
+		sParameterName,
+		i;
+
+	for (i = 0; i < sURLVariables.length; i++) {
+		sParameterName = sURLVariables[i].split('=');
+
+		if (sParameterName[0] === sParam) {
+			return sParameterName[1] === undefined ? true : sParameterName[1];
+		}
+	}
+};
+
+function print(){
+	$('#print').empty();
+	$.get(app.db, function(data){
+		for(var i=0; i<data.produtos.length; i++){
+			if(produto[i] == 0){
+				for(var x=0; x<data.produtos[i].length; x++){
+					$('#print').append('<div id="'+data.produtos[i][x].codigo+'" class="col-md-3"><div class="inicial2" data-toggle="tooltip" title="'+data.produtos[i][x].nome+'""><a href="'+app.prodDetail+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'"><h3>'+data.produtos[i][x].nome+'</h3></a><div class="grid"><figure class="effect-lexi"><img src="../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg"><figcaption><p><a><i id="botCarrinho" data-id='+data.produtos[i][x].codigo+' data-tipo='+data.produtos[i][x].tipo+' class="fa fa-fw fa-cart-plus fa-lg"></i></a><a href=""><i class="fa fa-fw fa-heart"></i></a><a href=""><i class="fa fa-fw fa-usd"></i></a></p></figcaption></figure></div><h4>R$ '+data.produtos[i][x].valor+'</h4></div></div>');
+				}
+			}
+		}
+	});
+}
+
+function printCarrinho(){
+	$('#appendCarrinho').empty();
+	$.get(app.db, function(data){
+		for(var i=0; i<data.produtos.length; i++){
+			for(var x=0; x<data.produtos[i].length; x++){
+				if(data.produtos[i][x].carrinho==1){
+					$('#appendCarrinho').append('<div class="linha"<div class="row"><div class="col-md-4"><div class="imgCarrinho"><img src="../../../../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg"></div></div><div class="col-md-8"><button type="button" class="close" data-fechar='+data.produtos[i][x].codigo+' id="botFechar'+data.produtos[i][x].codigo+'">&times;</button><div class="separa"><p>'+data.produtos[i][x].nome+'</p></div><div class="row"><div class="col-md-2"><div class="input-field"><input id="inputCarrinho'+data.produtos[i][x].codigo+'" value="1" placeholder="" type="text" class="validate num" readonly></div></div>		<div class="col-md-2"><div data-count="'+data.produtos[i][x].codigo+'" class="botmais"><p>+</p></div><div data-count="'+data.produtos[i][x].codigo+'" class="botmenos"><p>-</p></div></div><div class="col-md-4"><p>Quantidade</p></div></div>		<div class="row"><div class="col-md-6"><p> Valor unitário: R$ '+data.produtos[i][x].valor+'</p></div><div class="col-md-6"><div id="subTotal'+data.produtos[i][x].codigo+'"></div></div>		</div></div></div><div class="divider"</div></div>');
+				}
+			}
+		}
+	if(quantidade==0){
+		$('#appendCarrinho').append('<div class="vazio"><h2>Não há produtos no carrinho</h2></div>');
+	}
+	});
+}
+
 function actions() {
 	$("input").blur(function(){
 		$('.modalsearch').fadeToggle();
 	});
-}
 
-$(document).ready(function () {
-	var micro=0, sensores=0, displays=0, componentes=0, cabos=0, motores=0, embarcados=0;
-	
-	print();
-	conta();
-	actions();
-
-
-	var trigger = $('.hamburger'),
-		overlay = $('.overlay'),
-		 isClosed = false;
-
-		trigger.click(function () {
-				hamburger_cross();      
-		});
-
-	function hamburger_cross() {
-
-		if (isClosed == true) {          
-			overlay.hide();
-			trigger.removeClass('is-open');
-			trigger.addClass('is-closed');
-			isClosed = false;
-		} else {
-			overlay.show();
-			trigger.removeClass('is-closed');
-			trigger.addClass('is-open');
-			isClosed = true;
-		}
-	}
-		
 	$('[data-toggle="offcanvas"]').click(function () {
 		$('#wrapper').toggleClass('toggled');
 	});
@@ -312,57 +324,41 @@ $(document).ready(function () {
 		print();
 	});
 
+	$("#zoom_05").elevateZoom({
+		zoomType: "inner",
+		cursor: "crosshair"
+	});
+
 	$('#appendCarrinho').on('input', '.num', function(event){
 		this.value = this.value.replace(/[^0-9]/g, '');
 	});
+	
+	var trigger = $('.hamburger'),
+		overlay = $('.overlay'),
+		 isClosed = false;
 
-	var getUrlParameter = function getUrlParameter(sParam) {
-		var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-			sURLVariables = sPageURL.split('&'),
-			sParameterName,
-			i;
+	trigger.click(function () {
+			hamburger_cross();
+	});
 
-		for (i = 0; i < sURLVariables.length; i++) {
-			sParameterName = sURLVariables[i].split('=');
+	function hamburger_cross() {
 
-			if (sParameterName[0] === sParam) {
-				return sParameterName[1] === undefined ? true : sParameterName[1];
-			}
+		if (isClosed == true) {          
+			overlay.hide();
+			trigger.removeClass('is-open');
+			trigger.addClass('is-closed');
+			isClosed = false;
+		} else {
+			overlay.show();
+			trigger.removeClass('is-closed');
+			trigger.addClass('is-open');
+			isClosed = true;
 		}
-	};
-
-	function print(){
-		$('#print').empty();
-		$.get(app.db, function(data){
-			for(var i=0; i<data.produtos.length; i++){
-				if(produto[i] == 0){
-					for(var x=0; x<data.produtos[i].length; x++){
-						$('#print').append('<div id="'+data.produtos[i][x].codigo+'" class="col-md-3"><div class="inicial2" data-toggle="tooltip" title="'+data.produtos[i][x].nome+'""><a href="'+app.prodDetail+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'"><h3>'+data.produtos[i][x].nome+'</h3></a><div class="grid"><figure class="effect-lexi"><img src="../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg"><figcaption><p><a><i id="botCarrinho" data-id='+data.produtos[i][x].codigo+' data-tipo='+data.produtos[i][x].tipo+' class="fa fa-fw fa-cart-plus fa-lg"></i></a><a href=""><i class="fa fa-fw fa-heart"></i></a><a href=""><i class="fa fa-fw fa-usd"></i></a></p></figcaption></figure></div><h4>R$ '+data.produtos[i][x].valor+'</h4></div></div>');
-					}
-				}
-			}
-		});
 	}
+}
 
-	function printCarrinho(){
-		$('#appendCarrinho').empty();
-		$.get(app.db, function(data){
-			for(var i=0; i<data.produtos.length; i++){
-				for(var x=0; x<data.produtos[i].length; x++){
-					if(data.produtos[i][x].carrinho==1){
-						$('#appendCarrinho').append('<div class="linha"<div class="row"><div class="col-md-4"><div class="imgCarrinho"><img src="../../../../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg"></div></div><div class="col-md-8"><button type="button" class="close" data-fechar='+data.produtos[i][x].codigo+' id="botFechar'+data.produtos[i][x].codigo+'">&times;</button><div class="separa"><p>'+data.produtos[i][x].nome+'</p></div><div class="row"><div class="col-md-2"><div class="input-field"><input id="inputCarrinho'+data.produtos[i][x].codigo+'" value="1" placeholder="" type="text" class="validate num"></div></div>		<div class="col-md-2"><div data-count="'+data.produtos[i][x].codigo+'" class="botmais"><p>+</p></div><div data-count="'+data.produtos[i][x].codigo+'" class="botmenos"><p>-</p></div></div><div class="col-md-4"><p>Quantidade</p></div></div>		<div class="row"><div class="col-md-6"><p> Valor unitário: R$ '+data.produtos[i][x].valor+'</p></div><div class="col-md-6"><div id="subTotal'+data.produtos[i][x].codigo+'"></div></div>		</div></div></div><div class="divider"</div></div>');
-					}
-				}
-			}
-		if(quantidade==0){
-			$('#appendCarrinho').append('<div class="vazio"><h2>Não há produtos no carrinho</h2></div>');
-		}
-		});
-	}
-
-$("#zoom_05").elevateZoom({
-  zoomType: "inner",
-  cursor: "crosshair"
-});
-
+$(document).ready(function () {
+	print();
+	conta();
+	actions();
 });

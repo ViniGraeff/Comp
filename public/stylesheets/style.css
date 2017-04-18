@@ -861,11 +861,11 @@ figure.effect-lexi:hover p {
   width: 40px;
   margin-bottom: 20px;
 }
-.linha .col-md-8 .col-md-10 {
+.linha .col-md-8 .col-md-4 {
   margin: 0;
   padding: 0;
 }
-.linha .col-md-8 .col-md-10 p {
+.linha .col-md-8 .col-md-4 p {
   margin-top: 4px;
 }
 .divider {
@@ -882,4 +882,34 @@ figure.effect-lexi:hover p {
   font-size: 41px;
   margin-top: 52px;
   margin-left: 20px;
+}
+.botmais {
+  width: 20px;
+  height: 18px;
+  background-color: #333;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+}
+.botmais p {
+  line-height: 18px;
+}
+.botmais:hover {
+  background-color: #4d4d4d;
+}
+.botmenos {
+  width: 20px;
+  height: 18px;
+  background-color: #333;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+}
+.botmenos p {
+  line-height: 18px;
+}
+.botmenos:hover {
+  background-color: #4d4d4d;
 }

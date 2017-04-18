@@ -108,7 +108,6 @@ function carrinhoExcluir(id, elem){
 
 function addCount(id){
 	$.get(app.db, function(data){
-		console.log('id = '+ id)
 		var count = $('#inputCarrinho'+id).val();
 		count++;
 		var cat;
@@ -121,11 +120,9 @@ function addCount(id){
 				}
 			}
 		}
-		console.log(cat);
-		console.log(prod);
 		var preco = data.produtos[cat][prod].valor * count;
-		console.log(data.produtos[cat][prod].valor);
-		console.log(preco);
+		$('#subTotal'+id).empty();
+		$('#subTotal'+id).append('<p>Subtotal: R$ '+preco+'</p>');
 	});
 }
 
@@ -133,10 +130,21 @@ function subCount(id){
 	$.get(app.db, function(data){
 		var count = $('#inputCarrinho'+id).val();
 		count--;
+		var cat;
 		if(count<1)
 			count = 1;
 		$('#inputCarrinho'+id).val(count);
-		console.log(count);
+		for(i in data.produtos){
+			for(x in data.produtos[i]){
+				if(data.produtos[i][x].codigo == id){
+					cat = i;
+					prod = x;
+				}
+			}
+		}
+		var preco = data.produtos[cat][prod].valor * count;
+		$('#subTotal'+id).empty();
+		$('#subTotal'+id).append('<p>Subtotal: R$ '+preco+'</p>');
 	});
 }
 
@@ -342,7 +350,7 @@ $(document).ready(function () {
 			for(var i=0; i<data.produtos.length; i++){
 				for(var x=0; x<data.produtos[i].length; x++){
 					if(data.produtos[i][x].carrinho==1){
-						$('#appendCarrinho').append('<div class="linha"<div class="row"><div class="col-md-4"><div class="imgCarrinho"><img src="../../../../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg"></div></div><div class="col-md-8"><button type="button" class="close" data-fechar='+data.produtos[i][x].codigo+' id="botFechar'+data.produtos[i][x].codigo+'">&times;</button><div class="separa"><p>'+data.produtos[i][x].nome+'</p></div><div class="row"><div class="col-md-2"><div class="input-field"><input id="inputCarrinho'+data.produtos[i][x].codigo+'" value="1" placeholder="" type="text" class="validate num"></div></div>		<div class="col-md-2"><div data-count="'+data.produtos[i][x].codigo+'" class="botmais"><p>+</p></div><div data-count="'+data.produtos[i][x].codigo+'" class="botmenos"><p>-</p></div></div>		<div class="col-md-4"><p> Quantidade</p></div></div><p> Valor unitário: R$ '+data.produtos[i][x].valor+' / Valor total:</p><p id="subTotal'+data.produtos[i][x].codigo+'"></p></div></div><div class="divider"</div></div>');
+						$('#appendCarrinho').append('<div class="linha"<div class="row"><div class="col-md-4"><div class="imgCarrinho"><img src="../../../../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg"></div></div><div class="col-md-8"><button type="button" class="close" data-fechar='+data.produtos[i][x].codigo+' id="botFechar'+data.produtos[i][x].codigo+'">&times;</button><div class="separa"><p>'+data.produtos[i][x].nome+'</p></div><div class="row"><div class="col-md-2"><div class="input-field"><input id="inputCarrinho'+data.produtos[i][x].codigo+'" value="1" placeholder="" type="text" class="validate num"></div></div>		<div class="col-md-2"><div data-count="'+data.produtos[i][x].codigo+'" class="botmais"><p>+</p></div><div data-count="'+data.produtos[i][x].codigo+'" class="botmenos"><p>-</p></div></div><div class="col-md-4"><p>Quantidade</p></div></div>		<div class="row"><div class="col-md-6"><p> Valor unitário: R$ '+data.produtos[i][x].valor+'</p></div><div class="col-md-6"><div id="subTotal'+data.produtos[i][x].codigo+'"></div></div>		</div></div></div><div class="divider"</div></div>');
 					}
 				}
 			}

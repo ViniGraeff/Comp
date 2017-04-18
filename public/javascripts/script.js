@@ -17,19 +17,142 @@ produto[4]=0;
 produto[5]=0;
 produto[6]=0;
 
+$(function () {
+		$('[data-toggle="tooltip"]').tooltip()
+});
+
+
+
+function conta(){
+	quantidade=0;
+	$('#contador').empty();
+	$.get(app.db, function(data){
+		for(var i=0; i<data.produtos.length; i++){
+			for(var x=0; x<data.produtos[i].length; x++){
+				if(data.produtos[i][x].carrinho==1){
+					quantidade=quantidade+1;
+				}
+			}
+		}
+	$('#contador').append('<p>'+quantidade+'</p>');
+	});
+}
+
+
+$.get(app.db, function(data) {
+	$('#txt-search').keyup(function(){
+		var searchField = $(this).val();
+		if(searchField === '') {
+			$('#filter-records').html('');
+			return;
+		}
+		
+		var regex = new RegExp(searchField, "i");
+		var output = '<div class="row">';
+		var count = 1;
+		for(i in data.produtos){
+			for(x in data.produtos[i]){
+				console.log(data.produtos[i][x].nome);
+				if(data.produtos[i][x].nome.search(regex) != -1){
+				output += '<a href="'+app.prodDetail+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'"><div class="col-md-12 well">';
+				output += '<div class="col-md-3"><div class="imgsearch"><img src="../../../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg" alt="'+ data.produtos[i][x].nome +'" /></div></div>';
+				output += '<div class="col-md-7">';
+				output += '<h5>' + data.produtos[i][x].nome + '</h5>';
+				output += '<p>R$ ' + data.produtos[i][x].valor + '</p>'
+				output += '</div>';
+				output += '</div></a>';
+				if(count%2 == 0){
+					output += '</div><div class="row">'
+				}
+				count++;
+				}
+			}
+		}
+		output += '</div>';
+		$('#filter-records').html(output);
+	});
+});
+
+function carrinho(){
+	$.ajax({
+		type: 'GET',
+		dataType: 'json',
+		url: app.prodDetail+dataId,
+		success: function(result){
+			console.log('Produto adicionado com sucesso!');
+			conta();
+
+		},
+		error: function(status){
+			console.log(status);
+		}
+	});
+}
+function carrinhoExcluir(id, elem){
+	$.ajax({
+		type: 'GET',
+		dataType: 'json',
+		url: app.prodExcluir+id,
+		success: function(result){
+			$(elem).parents('.linha').slideUp('slow', function(){
+				$(elem).parents('.linha').remove();
+				console.log('Produto excluido com sucesso!');
+			});
+			conta();
+		},
+		error: function(status){
+			console.log(status);
+		}
+	});
+}
+
+function addCount(id){
+	$.get(app.db, function(data){
+		console.log('id = '+ id)
+		var count = $('#inputCarrinho'+id).val();
+		count++;
+		var cat;
+		$('#inputCarrinho'+id).val(count);
+		for(i in data.produtos){
+			for(x in data.produtos[i]){
+				if(data.produtos[i][x].codigo == id){
+					cat = i;
+					prod = x;
+				}
+			}
+		}
+		console.log(cat);
+		console.log(prod);
+		var preco = data.produtos[cat][prod].valor * count;
+		console.log(data.produtos[cat][prod].valor);
+		console.log(preco);
+	});
+}
+
+function subCount(id){
+	$.get(app.db, function(data){
+		var count = $('#inputCarrinho'+id).val();
+		count--;
+		if(count<1)
+			count = 1;
+		$('#inputCarrinho'+id).val(count);
+		console.log(count);
+	});
+}
+
+function actions() {
+	$("input").blur(function(){
+		$('.modalsearch').fadeToggle();
+	});
+}
 
 $(document).ready(function () {
 	var micro=0, sensores=0, displays=0, componentes=0, cabos=0, motores=0, embarcados=0;
 	
-	$(function () {
-			$('[data-toggle="tooltip"]').tooltip()
-	});
 	print();
 	conta();
+	actions();
 
-	$("input").blur(function(){
-		$('.modalsearch').fadeToggle();
-	});
 
 	var trigger = $('.hamburger'),
 		overlay = $('.overlay'),
@@ -79,6 +202,16 @@ $(document).ready(function () {
 	$('#appendCarrinho').on('click', '.close', function(){
 		var dataFechar = $(this).data("fechar");
 		carrinhoExcluir(dataFechar, $(this));
+	});
+
+	$('#appendCarrinho').on('click', '.botmais', function(){
+		var dataCount = $(this).data("count");
+		addCount(dataCount);
+	});
+
+	$('#appendCarrinho').on('click', '.botmenos', function(){
+		var dataCount = $(this).data("count");
+		subCount(dataCount);
 	});
 
 	$('#botFechar').click(function(){
@@ -209,7 +342,7 @@ $(document).ready(function () {
 			for(var i=0; i<data.produtos.length; i++){
 				for(var x=0; x<data.produtos[i].length; x++){
 					if(data.produtos[i][x].carrinho==1){
-						$('#appendCarrinho').append('<div class="linha"<div class="row"><div class="col-md-4"><div class="imgCarrinho"><img src="../../../../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg"></div></div><div class="col-md-8"><button type="button" class="close" data-fechar='+data.produtos[i][x].codigo+' id="botFechar'+data.produtos[i][x].codigo+'">&times;</button><div class="separa"><p>'+data.produtos[i][x].nome+'</p></div><div class="row"><div class="col-md-2"><div class="input-field"><input placeholder="" type="text" class="validate num"></div></div><div class="col-md-10"><p> Quantidade</p></div></div><p> Valor unitário: R$ '+data.produtos[i][x].valor+' / Valor total: X</p></div></div><div class="divider"</div></div>');
+						$('#appendCarrinho').append('<div class="linha"<div class="row"><div class="col-md-4"><div class="imgCarrinho"><img src="../../../../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg"></div></div><div class="col-md-8"><button type="button" class="close" data-fechar='+data.produtos[i][x].codigo+' id="botFechar'+data.produtos[i][x].codigo+'">&times;</button><div class="separa"><p>'+data.produtos[i][x].nome+'</p></div><div class="row"><div class="col-md-2"><div class="input-field"><input id="inputCarrinho'+data.produtos[i][x].codigo+'" value="1" placeholder="" type="text" class="validate num"></div></div>		<div class="col-md-2"><div data-count="'+data.produtos[i][x].codigo+'" class="botmais"><p>+</p></div><div data-count="'+data.produtos[i][x].codigo+'" class="botmenos"><p>-</p></div></div>		<div class="col-md-4"><p> Quantidade</p></div></div><p> Valor unitário: R$ '+data.produtos[i][x].valor+' / Valor total:</p><p id="subTotal'+data.produtos[i][x].codigo+'"></p></div></div><div class="divider"</div></div>');
 					}
 				}
 			}
@@ -225,87 +358,3 @@ $("#zoom_05").elevateZoom({
 });
 
 });
-
-
-function conta(){
-	quantidade=0;
-	$('#contador').empty();
-	$.get(app.db, function(data){
-		for(var i=0; i<data.produtos.length; i++){
-			for(var x=0; x<data.produtos[i].length; x++){
-				if(data.produtos[i][x].carrinho==1){
-					quantidade=quantidade+1;
-				}
-			}
-		}
-	$('#contador').append('<p>'+quantidade+'</p>');
-	});
-}
-
-
-$.get(app.db, function(data) {
-	$('#txt-search').keyup(function(){
-		var searchField = $(this).val();
-		if(searchField === '') {
-			$('#filter-records').html('');
-			return;
-		}
-		
-		var regex = new RegExp(searchField, "i");
-		var output = '<div class="row">';
-		var count = 1;
-		for(i in data.produtos){
-			for(x in data.produtos[i]){
-				console.log(data.produtos[i][x].nome);
-				if(data.produtos[i][x].nome.search(regex) != -1){
-				output += '<a href="'+app.prodDetail+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'"><div class="col-md-12 well">';
-				output += '<div class="col-md-3"><div class="imgsearch"><img src="../../../img/'+data.produtos[i][x].tipo+'/'+data.produtos[i][x].codigo+'.jpg" alt="'+ data.produtos[i][x].nome +'" /></div></div>';
-				output += '<div class="col-md-7">';
-				output += '<h5>' + data.produtos[i][x].nome + '</h5>';
-				output += '<p>R$ ' + data.produtos[i][x].valor + '</p>'
-				output += '</div>';
-				output += '</div></a>';
-				if(count%2 == 0){
-					output += '</div><div class="row">'
-				}
-				count++;
-				}
-			}
-		}
-		output += '</div>';
-		$('#filter-records').html(output);
-	});
-});
-
-function carrinho(){
-	$.ajax({
-		type: 'GET',
-		dataType: 'json',
-		url: app.prodDetail+dataId,
-		success: function(result){
-        	console.log('Produto adicionado com sucesso!');
-        	conta();
-
-    	},
-    	error: function(status){
-    		console.log(status);
-    	}
-	});
-}
-function carrinhoExcluir(id, elem){
-	$.ajax({
-		type: 'GET',
-		dataType: 'json',
-		url: app.prodExcluir+id,
-		success: function(result){
-        	$(elem).parents('.linha').slideUp('slow', function(){
-        		$(elem).parents('.linha').remove();
-        		console.log('Produto excluido com sucesso!');
-        	});
-        	conta();
-    	},
-    	error: function(status){
-    		console.log(status);
-    	}
-	});
-}

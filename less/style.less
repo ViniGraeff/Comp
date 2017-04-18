@@ -1042,7 +1042,7 @@ figure.effect-lexi:hover p {
 				margin-bottom: 20px;
 			}
 		}
-		.col-md-10 {
+		.col-md-4 {
 			margin: 0;
 			padding: 0;
 			p {
@@ -1065,10 +1065,42 @@ figure.effect-lexi:hover p {
 	overflow-x: hidden;
 }
 
-.vazio{
-	h2{
+.vazio {
+	h2 {
 		font-size: 41px;
 		margin-top: 52px;
 		margin-left: 20px;
+	}
+}
+
+.botmais {
+	width: 20px;
+	height: 18px;
+	background-color: @nav-top;
+	border-radius: 5px;
+	text-align: center;
+	cursor: pointer;
+	color: white;
+	p{
+		line-height: 18px;
+	}
+	&:hover{
+		background-color: lighten(@nav-top, 10%);
+	}
+}
+
+.botmenos {
+	width: 20px;
+	height: 18px;
+	background-color: @nav-top;
+	border-radius: 5px;
+	text-align: center;
+	cursor: pointer;
+	color: white;
+	p{
+		line-height: 18px;
+	}
+	&:hover{
+		background-color: lighten(@nav-top, 10%);
 	}
 }

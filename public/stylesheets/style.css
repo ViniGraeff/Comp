@@ -23,12 +23,15 @@ html {
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #34495e;
+  background: #333333;
   border-radius: 5px;
 }
 /*-------------------------------*/
 /*           VARIABLES           */
 /*-------------------------------*/
+/*@bg-color: white;*/
+/*@bg-color: #3498db;*/
+/*@cinza: #2c3e50;*/
 body {
   position: relative;
   overflow-x: hidden;
@@ -69,7 +72,7 @@ a {
   display: block;
   width: 5%;
   height: 100%;
-  background-color: #007fff;
+  background-color: #f1c40f;
   float: right;
   padding: 13px;
   text-align: center;
@@ -89,7 +92,7 @@ a {
   padding-top: 30px;
   font-size: 45px;
   font-family: 'Aldrich', sans-serif;
-  color: #007fff;
+  color: #f1c40f;
 }
 /*-----------------------------*/
 .nav .open > a {
@@ -175,31 +178,31 @@ a {
   color: #ffffff;
 }
 .sidebar-nav li:nth-child(2):before {
-  background-color: #007af5;
+  background-color: #e8bd0e;
 }
 .sidebar-nav li:nth-child(3):before {
-  background-color: #007cfa;
+  background-color: #edc10e;
 }
 .sidebar-nav li:nth-child(4):before {
-  background-color: #007fff;
+  background-color: #f1c40f;
 }
 .sidebar-nav li:nth-child(5):before {
-  background-color: #007cfa;
+  background-color: #edc10e;
 }
 .sidebar-nav li:nth-child(6):before {
-  background-color: #007af5;
+  background-color: #e8bd0e;
 }
 .sidebar-nav li:nth-child(7):before {
-  background-color: #0077f0;
+  background-color: #e3b90d;
 }
 .sidebar-nav li:nth-child(8):before {
-  background-color: #0075eb;
+  background-color: #dfb50d;
 }
 .sidebar-nav li:nth-child(9):before {
-  background-color: #0072e5;
+  background-color: #dab10d;
 }
 .sidebar-nav li:nth-child(10):before {
-  background-color: #0070e0;
+  background-color: #d5ad0c;
 }
 .sidebar-nav li:hover:before {
   transition: width 0.2s ease-in;
@@ -291,17 +294,17 @@ a {
 }
 .hamburger.is-closed .hamb-top {
   -webkit-transition: all 0.35s ease-in-out;
-  background-color: rgba(0, 127, 255, 0.7);
+  background-color: rgba(241, 196, 15, 0.7);
   top: 5px;
 }
 .hamburger.is-closed .hamb-middle {
-  background-color: rgba(0, 127, 255, 0.7);
+  background-color: rgba(241, 196, 15, 0.7);
   margin-top: -2px;
   top: 50%;
 }
 .hamburger.is-closed .hamb-bottom {
   -webkit-transition: all 0.35s ease-in-out;
-  background-color: rgba(0, 127, 255, 0.7);
+  background-color: rgba(241, 196, 15, 0.7);
   bottom: 5px;
 }
 .hamburger.is-closed .hamb-top,
@@ -318,18 +321,18 @@ a {
 .hamburger.is-open .hamb-top {
   -webkit-transform: rotate(45deg);
   -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
-  background-color: #007fff;
+  background-color: #f1c40f;
   margin-top: -2px;
   top: 50%;
 }
 .hamburger.is-open .hamb-middle {
-  background-color: #007fff;
+  background-color: #f1c40f;
   display: none;
 }
 .hamburger.is-open .hamb-bottom {
   -webkit-transform: rotate(-45deg);
   -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
-  background-color: #007fff;
+  background-color: #f1c40f;
   margin-top: -2px;
   top: 50%;
 }
@@ -393,7 +396,7 @@ a {
   overflow: hidden;
   margin: 30px auto;
   background-color: white;
-  color: #007fff;
+  color: #333333;
 }
 .conteudo .col-md-4 {
   margin-top: 0;
@@ -434,7 +437,7 @@ a {
   background-color: #c9c9c9;
   text-align: center;
   box-shadow: 0px 5px 10px #444;
-  color: #007fff;
+  color: #333333;
 }
 .inicial2:hover {
   z-index: 5;
@@ -443,7 +446,7 @@ a {
 .inicial2 h3 {
   padding-top: 10px;
   font-size: 20px;
-  color: #007fff;
+  color: #333333;
 }
 .inicial2 h4 {
   font-size: 25px;
@@ -466,6 +469,7 @@ a {
   display: inline;
   float: left;
   margin: 10px 0 10px 10px;
+  color: #f1c40f;
 }
 .inicial3:hover {
   z-index: 10;
@@ -497,7 +501,7 @@ a {
   margin: auto;
 }
 .carousel {
-  background: #34495e;
+  background: #333333;
   height: 469px;
   width: 80%;
   margin: 0 auto;
@@ -669,7 +673,7 @@ figure.effect-lexi:hover p {
   float: right;
   height: auto;
   min-height: 62px;
-  background-color: #007fff;
+  background-color: #f1c40f;
   position: absolute;
   z-index: 1001;
   left: 59%;
@@ -703,7 +707,7 @@ figure.effect-lexi:hover p {
   width: 93%;
   height: 150px;
   border-radius: 5px;
-  background-color: #34495e;
+  background-color: #333333;
   border: 0;
 }
 .searchOut {
@@ -754,7 +758,7 @@ figure.effect-lexi:hover p {
   overflow: hidden;
   margin: 132.38px auto;
   background-color: white;
-  color: #007fff;
+  color: #333333;
 }
 .conteudoProduto .col-md-4 {
   margin-top: 0;
@@ -778,7 +782,7 @@ figure.effect-lexi:hover p {
   height: 100%;
 }
 .containerNome {
-  color: #34495e;
+  color: #333333;
   margin-top: 50px;
   margin-left: 15px;
 }
@@ -789,29 +793,29 @@ figure.effect-lexi:hover p {
   min-width: 100px;
   width: auto;
   height: 40px;
-  background-color: #4da5ff;
+  background-color: #f5d657;
   border-radius: 5px;
   cursor: pointer;
-  color: white;
+  color: #333333;
   line-height: 40px;
   text-align: center;
 }
 .botaoCompra:hover {
-  background-color: #3399ff;
+  background-color: #f4d03f;
 }
 .botaoCarrinho {
   min-width: 100px;
   width: auto;
   height: 40px;
-  background-color: #007fff;
+  background-color: #f1c40f;
   border-radius: 5px;
   cursor: pointer;
-  color: white;
+  color: #333333;
   line-height: 40px;
   text-align: center;
 }
 .botaoCarrinho:hover {
-  background-color: #0072e6;
+  background-color: #dab10d;
 }
 .descricao {
   margin-left: 15px;
@@ -821,8 +825,8 @@ figure.effect-lexi:hover p {
 .modalcarrinho {
   width: 41%;
   height: auto;
-  min-height: 149px;
-  background-color: #007fff;
+  min-height: 199px;
+  background-color: #f1c40f;
   position: absolute;
   z-index: 1005;
   display: none;
@@ -874,7 +878,7 @@ figure.effect-lexi:hover p {
   background-color: #e0e0e0;
 }
 #appendCarrinho {
-  max-height: 384px;
+  max-height: 453px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -882,6 +886,7 @@ figure.effect-lexi:hover p {
   font-size: 41px;
   margin-top: 52px;
   margin-left: 20px;
+  margin-bottom: 52px;
 }
 .botmais {
   width: 20px;
@@ -912,4 +917,9 @@ figure.effect-lexi:hover p {
 }
 .botmenos:hover {
   background-color: #4d4d4d;
+}
+.total {
+  width: 100%;
+  height: 66px;
+  background-color: #333333;
 }

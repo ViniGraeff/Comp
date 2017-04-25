@@ -923,3 +923,19 @@ figure.effect-lexi:hover p {
   height: 66px;
   background-color: #333333;
 }
+.botFinalizarCompra {
+  float: right;
+  margin-right: 13px;
+  margin-top: 13px;
+  width: 200px;
+  height: 40px;
+  background-color: #f1c40f;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #333333;
+  line-height: 40px;
+  text-align: center;
+}
+.botFinalizarCompra:hover {
+  background-color: #c29d0b;
+}
